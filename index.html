@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en" class="static">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+  // Before paint: "js" turns on the load sequence and reveals; "static" is for people who prefer
+  // reduced motion. Without scripting the page stays static and fully readable.
+  document.documentElement.className = 'js' + (matchMedia('(prefers-reduced-motion: reduce)').matches ? ' static' : '');
+</script>
+<title>Missing Link · Strategy, brand and growth, linked</title>
+<meta name="description" content="Missing Link is an integrated marketing communications firm in Hyderabad. Senior people set your strategy, sharpen your brand and run the work that grows the business. Book a free 30 minute diagnostic.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mlinkm.com/">
+<meta property="og:site_name" content="Missing Link">
+<meta property="og:title" content="Your marketing has a missing link. We find it and fix it.">
+<meta property="og:description" content="Senior strategy, brand and growth work from a team with 23+ years of marketing leadership. Book a free 30 minute diagnostic.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#13142B">
+<link rel="canonical" href="https://mlinkm.com/">
+<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Missing Link",
+  "description": "Integrated marketing communications: strategy, brand and growth.",
+  "url": "https://mlinkm.com/",
+  "email": "hello@mlinkm.com",
+  "telephone": "+91 99661 33369",
+  "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressCountry": "IN" }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-tone="night">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Missing Link, back to top">
+      <svg class="brand-mark" viewBox="0 0 100 50" aria-hidden="true">
+        <path d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33" />
+        <path d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17" />
+        <path class="bar" d="M42 32 L58 18" />
+      </svg>
+      <span class="brand-name">Missing Link</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#services" data-nav>Services</a></li>
+        <li><a href="#work" data-nav>Work</a></li>
+        <li><a href="#approach" data-nav>Approach</a></li>
+        <li><a href="#team" data-nav>Team</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm header-cta" href="#diagnostic">Book a diagnostic</a>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#diagnostic" class="menu-cta">Book a free diagnostic</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <!-- Hero: the chain plays its story once, on load -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <canvas id="chain-canvas" aria-label="A 3D chain. The missing link drops into place. Drag to turn it." role="img"></canvas>
+    <div class="hero-fallback" aria-hidden="true">
+      <svg viewBox="0 0 100 50"><path d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33"/><path d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17"/><path class="bar" d="M42 32 L58 18"/></svg>
+    </div>
+    <div class="cursor-chip" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <h1 class="hero-title" id="hero-title">
+        <span class="ln">Your marketing has a missing link.</span>
+        <span class="ln ln-accent">We find it&nbsp;— and fix it.</span>
+      </h1>
+      <div class="hero-foot">
+        <p class="lead hero-lead">You work directly with senior people, not account managers. We set the strategy, sharpen the brand and run the work that grows the business.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#diagnostic">Book a free 30 minute diagnostic</a>
+          <a class="btn btn-ghost" href="#work">See our work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro: the problem in one sentence, the belief, the facts, the clients -->
+  <section class="section intro" aria-labelledby="intro-title">
+    <div class="container intro-grid">
+      <h2 class="statement" id="intro-title" data-reveal>Most marketing breaks in the gap between what you plan and what you get.</h2>
+      <div class="intro-side" data-reveal>
+        <p class="lead">Strategy, brand and growth only work when they are linked. Most teams own one piece. We connect all three, and stay to deliver the result.</p>
+        <dl class="facts">
+          <div><dt>23+</dt><dd>years of senior marketing leadership</dd></div>
+          <div><dt>8</dt><dd>industries served</dd></div>
+          <div><dt><span class="ph" tabindex="0">[X]</span></dt><dd>engagements delivered</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="container clients" data-reveal>
+      <p class="clients-label">Our team has worked with</p>
+      <ul class="client-list">
+        <li>ITC</li><li>NMDC</li><li>Dell</li><li>Google</li><li>Zoho</li><li>Cognizant</li><li>Hyderabad FC</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Services: which of these sounds like you -->
+  <section class="section services" id="services" aria-labelledby="services-title">
+    <div class="container services-grid">
+      <div class="head-block" data-reveal>
+        <h2 id="services-title">Which of these sounds like you?</h2>
+        <p class="lead">Pick the one that fits. It tells us where to start.</p>
+      </div>
+      <ol class="service-rows" role="list">
+        <li class="service" data-reveal>
+          <a class="service-link" href="#diagnostic" data-need="Strategy">
+            <span class="service-quote">“We’re busy, but not sure we’re going in the right direction.”</span>
+            <span class="service-body">
+              <span class="service-name">Strategy</span>
+              <span class="service-desc">Business and marketing strategy, advisory and transformation.</span>
+            </span>
+            <span class="service-go">Start with strategy</span>
+          </a>
+        </li>
+        <li class="service" data-reveal>
+          <a class="service-link" href="#diagnostic" data-need="Brand">
+            <span class="service-quote">“People don’t understand what we stand for.”</span>
+            <span class="service-body">
+              <span class="service-name">Brand</span>
+              <span class="service-desc">Brand strategy, identity, PR and corporate communications.</span>
+            </span>
+            <span class="service-go">Start with brand</span>
+          </a>
+        </li>
+        <li class="service" data-reveal>
+          <a class="service-link" href="#diagnostic" data-need="Growth">
+            <span class="service-quote">“Our marketing isn’t turning into results.”</span>
+            <span class="service-body">
+              <span class="service-name">Growth</span>
+              <span class="service-desc">Digital, performance, campaigns and creative.</span>
+            </span>
+            <span class="service-go">Start with growth</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Why us: three strengths, joined like links -->
+  <section class="band strengths" aria-labelledby="strengths-title">
+    <div class="container">
+      <div class="head-block head-split" data-reveal>
+        <h2 id="strengths-title">Senior thinking. Real delivery.</h2>
+        <p class="lead">Three strengths, held by the same senior team from the first conversation to the result.</p>
+      </div>
+      <div class="strength-chain" aria-hidden="true">
+        <svg viewBox="0 0 1200 90" preserveAspectRatio="none"><rect class="sc sc-1" x="8" y="12" width="400" height="66" rx="33"/><line class="sc sc-2 sc-bar" x1="350" y1="45" x2="850" y2="45"/><rect class="sc sc-3" x="792" y="12" width="400" height="66" rx="33"/></svg>
+      </div>
+      <ul class="strength-grid" role="list">
+        <li class="strength" data-i="1" data-reveal>
+          <h3>Intelligence</h3>
+          <p class="strength-lead">We understand the business first.</p>
+          <p>Markets, competitors and the bigger picture, before any recommendation.</p>
+        </li>
+        <li class="strength" data-i="2" data-reveal>
+          <h3>Experience</h3>
+          <p class="strength-lead">We’ve solved this before.</p>
+          <p>23+ years of senior marketing leadership across many industries.</p>
+        </li>
+        <li class="strength" data-i="3" data-reveal>
+          <h3>Execution</h3>
+          <p class="strength-lead">We deliver what we recommend.</p>
+          <p>Strategy turned into measurable work, by the same senior team.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Work: an index of projects with a preview on hover -->
+  <section class="section work" id="work" aria-labelledby="work-title">
+    <div class="container">
+      <div class="head-block head-split" data-reveal>
+        <h2 id="work-title">Selected work</h2>
+        <p class="lead">Projects across rural enterprise, infrastructure and technology.</p>
+      </div>
+      <ol class="work-index" role="list">
+        <li class="project tone-1" data-reveal>
+          <div class="project-art" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="project-main">
+            <h3 class="project-name">ORMAS</h3>
+            <p class="project-desc">Building visibility for Odisha’s rural enterprise ecosystem.</p>
+          </div>
+          <p class="project-sector">Rural enterprise</p>
+          <ul class="tags" aria-label="Services"><li>Strategy</li><li>Brand</li></ul>
+          <p class="project-outcome"><span class="ph" tabindex="0">[Verified outcome]</span></p>
+        </li>
+        <li class="project tone-2" data-reveal>
+          <div class="project-art" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="project-main">
+            <h3 class="project-name">Paradip Port Authority</h3>
+            <p class="project-desc">Connecting maritime infrastructure with strategic communication.</p>
+          </div>
+          <p class="project-sector">Infrastructure</p>
+          <ul class="tags" aria-label="Services"><li>Brand</li></ul>
+          <p class="project-outcome"><span class="ph" tabindex="0">[Verified outcome]</span></p>
+        </li>
+        <li class="project tone-3" data-reveal>
+          <div class="project-art" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="project-main">
+            <h3 class="project-name"><span class="ph" tabindex="0">[Technology client]</span></h3>
+            <p class="project-desc">Making a complex B2B proposition market ready.</p>
+          </div>
+          <p class="project-sector">Technology</p>
+          <ul class="tags" aria-label="Services"><li>Strategy</li><li>Growth</li></ul>
+          <p class="project-outcome"><span class="ph" tabindex="0">[Verified outcome]</span></p>
+        </li>
+      </ol>
+      <a class="work-next" href="#diagnostic" data-reveal>
+        <span class="work-next-title">Your business could be next.</span>
+        <span class="work-next-line">Start with a free 30 minute diagnostic and an honest view of where the gap is.</span>
+        <span class="btn btn-primary">Book a diagnostic</span>
+      </a>
+    </div>
+    <div class="project-preview" aria-hidden="true"><div class="project-art"><span></span><span></span><span></span></div></div>
+  </section>
+
+  <!-- Approach: four steps -->
+  <section class="section approach" id="approach" aria-labelledby="approach-title">
+    <div class="container">
+      <div class="head-block" data-reveal>
+        <h2 id="approach-title">Four steps from question to result.</h2>
+      </div>
+      <ol class="steps" data-reveal>
+        <li class="step"><span class="step-num" aria-hidden="true">1</span><h3>Understand</h3><p>We learn your business, audience and market.</p></li>
+        <li class="step"><span class="step-num" aria-hidden="true">2</span><h3>Strategise</h3><p>We set the direction, priorities and plan.</p></li>
+        <li class="step"><span class="step-num" aria-hidden="true">3</span><h3>Activate</h3><p>We run the campaigns and the work.</p></li>
+        <li class="step"><span class="step-num" aria-hidden="true">4</span><h3>Measure</h3><p>We track results and improve.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section team" id="team" aria-labelledby="team-title">
+    <div class="container">
+      <div class="head-block" data-reveal>
+        <h2 id="team-title">The people you’ll work with.</h2>
+      </div>
+      <ul class="team-grid" role="list">
+        <li class="person tone-1" data-reveal>
+          <div class="portrait" role="img" aria-label="Portrait of Mrinal K Ray, to be added"><span>MR</span></div>
+          <h3 class="person-name">Mrinal K Ray</h3>
+          <p class="person-role">Founder &amp; CEO</p>
+          <ul class="tags" aria-label="Focus"><li>Strategy</li><li>Growth</li></ul>
+        </li>
+        <li class="person tone-2" data-reveal>
+          <div class="portrait" role="img" aria-label="Portrait of Aparajita Ray, to be added"><span>AR</span></div>
+          <h3 class="person-name">Aparajita Ray</h3>
+          <p class="person-role">Co-Founder &amp; Director</p>
+          <ul class="tags" aria-label="Focus"><li>Operations</li></ul>
+        </li>
+        <li class="person tone-3" data-reveal>
+          <div class="portrait" role="img" aria-label="Portrait of Somaak Dutta, to be added"><span>SD</span></div>
+          <h3 class="person-name">Somaak Dutta</h3>
+          <p class="person-role">Director</p>
+          <ul class="tags" aria-label="Focus"><li>Creative strategy</li><li>Execution</li></ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Questions -->
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <div class="container faq-grid">
+      <div class="head-block" data-reveal>
+        <h2 id="faq-title">Before you book.</h2>
+        <p class="lead">Short answers to what people ask first.</p>
+      </div>
+      <div class="faq-list" data-reveal>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a1" id="q1">What happens in the diagnostic?</button><div class="a" id="a1" role="region" aria-labelledby="q1"><div><p>In 30 minutes we look at where your strategy, brand and growth are disconnected, agree the two or three priorities that matter most, and give you an honest view of whether we’re the right fit.</p></div></div></div>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a2" id="q2">Is the diagnostic really free?</button><div class="a" id="a2" role="region" aria-labelledby="q2"><div><p>Yes. It’s 30 minutes, free, and you leave with a clear next step whether or not we work together.</p></div></div></div>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a3" id="q3">Who will I actually work with?</button><div class="a" id="a3" role="region" aria-labelledby="q3"><div><p>Senior people, not account managers. The same team that sets the strategy delivers the work.</p></div></div></div>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a4" id="q4">Do you only advise, or do you deliver too?</button><div class="a" id="a4" role="region" aria-labelledby="q4"><div><p>Both. We set the strategy, sharpen the brand and run the campaigns, then track results and improve.</p></div></div></div>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a5" id="q5">Which industries do you work in?</button><div class="a" id="a5" role="region" aria-labelledby="q5"><div><p>We’ve served 8 industries, from rural enterprise and maritime infrastructure to technology.</p></div></div></div>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a6" id="q6">Where are you based?</button><div class="a" id="a6" role="region" aria-labelledby="q6"><div><p>Hyderabad. You can also reach us on WhatsApp at +91 99661 33369.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diagnostic: the form builds the link -->
+  <section class="band diagnostic" id="diagnostic" aria-labelledby="diag-title">
+    <div class="container diag-grid">
+      <div class="diag-copy" data-reveal>
+        <h2 id="diag-title">30 minutes. Free. A clear next step.</h2>
+        <p class="lead">The Missing Link diagnostic shows you:</p>
+        <ul class="diag-list">
+          <li>Where your strategy, brand and growth are disconnected</li>
+          <li>The two or three priorities that matter most</li>
+          <li>An honest view of whether we’re the right fit</li>
+        </ul>
+        <div class="builder" aria-hidden="true">
+          <svg viewBox="0 0 100 50">
+            <g class="ghosts"><path d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33"/><path d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17"/><path d="M42 32 L58 18"/></g>
+            <path class="b-left" pathLength="1" d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33"/>
+            <path class="b-right" pathLength="1" d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17"/>
+            <path class="b-bar" pathLength="1" d="M42 32 L58 18"/>
+          </svg>
+          <p class="builder-status">Fill in the form to complete the link.</p>
+        </div>
+      </div>
+      <form class="diag-form" novalidate action="mailto:hello@mlinkm.com" method="post" enctype="text/plain" data-reveal>
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="f-email">Work email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="f-org">Organisation</label>
+          <input id="f-org" name="org" type="text" autocomplete="organization" required>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="f-need">What do you need help with?</label>
+          <select id="f-need" name="need">
+            <option>Strategy</option><option>Brand</option><option>Growth</option><option selected>Not sure yet</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Request my diagnostic</button>
+        <p class="form-note">Or WhatsApp us on <a href="https://wa.me/919966133369" target="_blank" rel="noopener">+91 99661 33369</a></p>
+        <div class="form-success" role="status" hidden></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer-mast">Strategy. Brand. Growth. Linked.</p>
+    <div class="footer-row">
+      <a class="brand" href="#top" aria-label="Missing Link, back to top">
+        <svg class="brand-mark" viewBox="0 0 100 50" aria-hidden="true">
+          <path d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33" />
+          <path d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17" />
+          <path class="bar" d="M42 32 L58 18" />
+        </svg>
+        <span class="brand-name">Missing Link</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@mlinkm.com">hello@mlinkm.com</a></li>
+        <li><a href="tel:+919966133369">+91 99661 33369</a></li>
+        <li>Hyderabad</li>
+        <li><span class="ph" tabindex="0">[LinkedIn URL]</span></li>
+      </ul>
+    </div>
+    <p class="footer-legal">© 2026 Missing Link</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

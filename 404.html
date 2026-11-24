@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found · Missing Link</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#13142B">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #13142B; --text: #EEEFF6; --muted: #B0B3CC; --line: #2E3159; --white: #FFF;
+    --brand-magenta: #B43AD2; --cta: #B43AD2; --focus: #D98BEA;
+    --font-body: Manrope, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: dark;
+  }
+  html, body { overflow-x: clip; }
+  body { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 24px; background: var(--bg); color: var(--text); font-family: var(--font-body); text-align: center; }
+  svg { width: 160px; height: 80px; }
+  svg path { fill: none; stroke: var(--white); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+  svg .gap { stroke: var(--line); stroke-dasharray: 2 4; }
+  h1 { margin: 32px 0 12px; font-size: 2.25rem; line-height: 2.5rem; font-weight: 600; letter-spacing: -0.03em; }
+  p { margin: 0 0 32px; color: var(--muted); }
+  a { display: inline-flex; min-height: 48px; align-items: center; padding: 8px 24px; border-radius: 999px; background: var(--cta); color: var(--white); font-weight: 600; text-decoration: none; }
+  a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<main>
+  <svg viewBox="0 0 100 50" aria-hidden="true">
+    <path d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33"/>
+    <path d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17"/>
+    <path class="gap" d="M42 32 L58 18"/>
+  </svg>
+  <h1>This link is missing.</h1>
+  <p>The page you were looking for isn’t here.</p>
+  <a href="/">Back to Missing Link</a>
+</main>
+</body>
+</html>

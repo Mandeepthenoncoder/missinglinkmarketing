@@ -1,0 +1,1501 @@
+<!doctype html>
+<html lang="en" class="static">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+  // Before paint: "js" turns on the load sequence and reveals; "static" is for people who prefer
+  // reduced motion. Without scripting the page stays static and fully readable.
+  document.documentElement.className = 'js' + (matchMedia('(prefers-reduced-motion: reduce)').matches ? ' static' : '');
+</script>
+<title>Missing Link · Strategy, brand and growth, linked</title>
+<meta name="description" content="Missing Link is an integrated marketing communications firm in Hyderabad. Senior people set your strategy, sharpen your brand and run the work that grows the business. Book a free 30 minute diagnostic.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mlinkm.com/">
+<meta property="og:site_name" content="Missing Link">
+<meta property="og:title" content="Your marketing has a missing link. We find it and fix it.">
+<meta property="og:description" content="Senior strategy, brand and growth work from a team with 23+ years of marketing leadership. Book a free 30 minute diagnostic.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#13142B">
+<link rel="canonical" href="https://mlinkm.com/">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQjFGNEEiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3IDE5LjUpIHNjYWxlKDAuNSkiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBzdHJva2U9IiNmZmYiIGQ9Ik0zNyAxNyBMMjcgNyBRMjUgNSAyMyA3IEw3IDIzIFE1IDI1IDcgMjcgTDIzIDQzIFEyNSA0NSAyNyA0MyBMMzcgMzMiLz48cGF0aCBzdHJva2U9IiNmZmYiIGQ9Ik02MyAzMyBMNzMgNDMgUTc1IDQ1IDc3IDQzIEw5MyAyNyBROTUgMjUgOTMgMjMgTDc3IDcgUTc1IDUgNzMgNyBMNjMgMTciLz48cGF0aCBzdHJva2U9IiNEOTQ2RUYiIGQ9Ik00MiAzMiBMNTggMTgiLz48L2c+PC9zdmc+Cg==" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · v2.0.0 · redesign: full · built: the project · genre: editorial · theme: brand (Bridge logo sheet, sampled) · deal: manual · hero: Poster · nav: edge-aligned bar · footer: mast */
+/* critique: a website, not a slideshow. One orchestrated moment (the chain completes on load), then calm paper sections with one magenta accent, hairlines and big type. */
+/* waive 38iii: the hero's second line is set in the brand magenta because it is the missing link, the one moment the accent earns. */
+
+/* ---------- tokens ---------- */
+:root {
+  /* brand, sampled from the Bridge logo sheet */
+  --navy: #1C1F43;           /* logo ink */
+  --night: #13142B;          /* reverse logo field */
+  --magenta: #B43AD2;        /* the missing link bar */
+  --paper: #F3F4F8;          /* the sheet's own paper */
+
+  /* derived */
+  --surface: #FBFBFD;
+  --band: #E9E8F2;
+  --ink: var(--navy);
+  --ink-soft: #4A4E70;
+  --line: #D9DAE6;
+  --line-strong: #B4B6CC;
+  --accent: var(--magenta);
+  --accent-hover: #9A2BB6;
+  --accent-ink: #962AB0;      /* magenta text on paper, 6:1 */
+  --accent-light: #D98BEA;    /* magenta text on night, 7:1 */
+  --accent-wash: #F1E6F7;
+  --night-line: #2E3159;
+  --on-night: #EEEFF6;
+  --on-night-soft: #B0B3CC;
+  --on-accent: #FFFFFF;
+  --scrim-night: rgba(19, 20, 43, .78);
+  --scrim-paper: rgba(243, 244, 248, .86);
+  --shadow: rgba(19, 20, 43, .14);
+  --error: #B42318;
+
+  /* tones for picture slots, from navy to magenta */
+  --tone-1-bg: #DDE1F4; --tone-1-ink: #3A47A3;
+  --tone-2-bg: #E7E0F5; --tone-2-ink: #6A43B4;
+  --tone-3-bg: #F2E0F3; --tone-3-ink: var(--magenta);
+
+  /* type */
+  --font-body: Manrope, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text-display: clamp(2.6rem, 1.3rem + 4.4vw, 5.25rem);
+  --text-statement: clamp(2rem, 1.25rem + 2.6vw, 3.5rem);
+  --text-section: clamp(2rem, 1.35rem + 2.1vw, 3.25rem);
+  --text-title: clamp(1.375rem, 1.2rem + .5vw, 1.625rem);
+  --text-lead: clamp(1.0625rem, 1rem + .3vw, 1.3125rem);
+  --text-md: 1rem;
+  --text-sm: .875rem;
+
+  /* space */
+  --container: 1200px;
+  --gutter: max(20px, env(safe-area-inset-left, 0px));
+  --gap: 32px;
+  --space-sm: 8px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px;
+  --section: clamp(88px, 7vw + 40px, 144px);
+  --r-md: 16px; --r-lg: 28px;
+  --header-h: 72px;
+
+  --ease-out: cubic-bezier(.22, .9, .3, 1);
+  --dur: .8s;
+  color-scheme: light;
+}
+@media (min-width: 60rem) { :root { --gutter: max(40px, env(safe-area-inset-left, 0px)); } }
+
+/* ---------- base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; overflow-x: clip;
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--text-md); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body.menu-open { overflow: hidden; }
+h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
+h2 { font-size: var(--text-section); }
+h3 { font-size: var(--text-title); letter-spacing: -0.02em; }
+p { margin: 0; text-wrap: pretty; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+img, svg { max-width: 100%; }
+[hidden] { display: none !important; }
+::selection { background: var(--accent); color: var(--on-accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.lead { font-size: var(--text-lead); line-height: 1.5; color: var(--ink-soft); }
+
+.container { width: 100%; max-width: calc(var(--container) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+.section, .band { padding-block: var(--section); }
+.head-block { display: grid; gap: var(--space-md); max-width: 40rem; margin-bottom: var(--space-2xl); }
+.head-split { max-width: none; }
+@media (min-width: 60rem) {
+  .head-split { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gap); align-items: end; }
+}
+
+.skip-link {
+  position: fixed; left: 16px; top: 16px; z-index: 100; padding: 8px 14px; border-radius: 999px;
+  background: var(--surface); color: var(--ink); font-weight: 600; transform: translateY(-200%); transition: transform .3s var(--ease-out);
+}
+.skip-link:focus { transform: none; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-sm);
+  min-height: 48px; padding: 12px 24px; border-radius: 999px; border: 1px solid transparent;
+  font-size: 1rem; line-height: 1.25; font-weight: 600; text-decoration: none; white-space: nowrap; cursor: pointer;
+  transition: background-color .25s var(--ease-out), border-color .25s var(--ease-out), color .25s var(--ease-out), transform .25s var(--ease-out);
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-ghost { border-color: var(--line-strong); color: var(--ink); background: transparent; }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-sm { min-height: 40px; padding: 8px 18px; font-size: var(--text-sm); }
+.btn-block { width: 100%; }
+@media (pointer: coarse) { .btn-sm { min-height: 44px; } }
+
+/* placeholder chips for details still to be verified */
+.ph {
+  position: relative; display: inline-block; padding: 0 .35em; border-radius: 6px;
+  border: 1px dashed var(--line-strong); color: var(--ink-soft); cursor: help;
+}
+.ph::after {
+  content: "Placeholder: add the verified detail"; position: absolute; left: 0; top: calc(100% + 6px); z-index: 5;
+  padding: 4px 8px; border-radius: 6px; background: var(--ink); color: var(--on-night);
+  font-size: .75rem; line-height: 1.3; font-weight: 600; letter-spacing: 0; white-space: nowrap;
+  opacity: 0; transform: translateY(-4px); pointer-events: none; transition: opacity .2s, transform .2s;
+}
+.ph:hover::after, .ph:focus-visible::after { opacity: 1; transform: none; }
+
+/* ---------- header ---------- */
+.site-header {
+  position: fixed; inset: 0 0 auto; z-index: 50; padding-top: env(safe-area-inset-top, 0px);
+  color: var(--on-night); border-bottom: 1px solid transparent;
+  transition: background-color .3s var(--ease-out), color .3s var(--ease-out), border-color .3s var(--ease-out), opacity .6s var(--ease-out), transform .6s var(--ease-out);
+}
+.site-header[data-tone="paper"] {
+  background: var(--scrim-paper); color: var(--ink); border-bottom-color: var(--line);
+  backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+.header-inner { display: flex; align-items: center; gap: var(--space-lg); height: var(--header-h); }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand-mark { width: 40px; height: 20px; flex: none; }
+.brand-mark path { fill: none; stroke: currentColor; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.brand-mark .bar { stroke: var(--accent); }
+.brand-name { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.01em; }
+.nav { margin-left: auto; display: none; }
+.nav-links { display: flex; gap: 4px; }
+.nav-links a {
+  display: block; padding: 8px 12px; border-radius: 999px; font-size: var(--text-sm); font-weight: 500; text-decoration: none;
+  opacity: .8; transition: opacity .2s;
+}
+.nav-links a:hover, .nav-links a.is-current { opacity: 1; }
+.nav-links a.is-current { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.header-cta { display: none; }
+.burger {
+  margin-left: auto; position: relative; width: 44px; height: 44px; border-radius: 999px; flex: none;
+  border: 1px solid currentColor; background: transparent; cursor: pointer;
+}
+.burger span { position: absolute; left: 50%; top: 50%; width: 16px; height: 2px; margin: -1px 0 0 -8px; border-radius: 2px; background: currentColor; transition: transform .35s var(--ease-out); }
+.burger span:nth-child(1) { transform: translateY(-3px); }
+.burger span:nth-child(2) { transform: translateY(3px); }
+.menu-open .burger span:nth-child(1) { transform: rotate(45deg); }
+.menu-open .burger span:nth-child(2) { transform: rotate(-45deg); }
+.menu-open .site-header { color: var(--ink); background: var(--paper); }
+@media (min-width: 60rem) {
+  .nav, .header-cta { display: flex; }
+  .burger { display: none; }
+}
+.menu {
+  position: fixed; inset: 0; z-index: 40; padding: calc(var(--header-h) + 40px) var(--gutter) 40px;
+  background: var(--paper); color: var(--ink);
+  opacity: 0; visibility: hidden; transition: opacity .35s var(--ease-out), visibility .35s;
+}
+.menu-open .menu { opacity: 1; visibility: visible; }
+.menu ul { display: grid; gap: 8px; }
+.menu a { display: block; padding: 8px 0; font-size: 2rem; line-height: 1.2; font-weight: 600; letter-spacing: -0.02em; text-decoration: none; border-bottom: 1px solid var(--line); }
+.menu .menu-cta { color: var(--accent-ink); border-bottom: 0; }
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative; overflow: hidden; isolation: isolate;
+  min-height: max(640px, 100svh); background: var(--night); color: var(--on-night);
+  display: flex;
+}
+#chain-canvas { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: pan-y; }
+#chain-canvas.is-dragging { cursor: grabbing; }
+.hero::after { /* keeps the text legible where it meets the chain */
+  content: ""; position: absolute; inset: auto 0 0; height: 58%; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, var(--night) 22%, transparent);
+}
+.hero-fallback { position: absolute; inset: 0 0 45%; z-index: 0; display: grid; place-items: center; }
+.hero-fallback svg { width: min(56vw, 360px); }
+.hero-fallback path { fill: none; stroke: var(--on-night); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.hero-fallback .bar { stroke: var(--accent); }
+.js .hero-fallback { display: none; }
+.js .hero-fallback.is-on { display: grid; }
+.hero-inner {
+  position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-xl);
+  padding-top: calc(var(--header-h) + 40px); padding-bottom: clamp(40px, 7vh, 88px); pointer-events: none;
+}
+.hero-inner a { pointer-events: auto; }
+.hero-title { font-size: var(--text-display); line-height: 1.02; letter-spacing: -0.04em; max-width: 15ch; }
+.hero-title .ln { display: block; }
+.hero-title .ln-accent { color: var(--accent-light); }
+.hero-foot { display: grid; gap: var(--space-lg); }
+.hero-lead { color: var(--on-night-soft); max-width: 44ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero .btn-ghost { color: var(--on-night); border-color: var(--night-line); background: var(--scrim-night); }
+.hero .btn-ghost:hover { border-color: var(--on-night-soft); }
+@media (min-width: 60rem) {
+  .hero-foot { grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: var(--space-2xl); }
+}
+.cursor-chip {
+  position: absolute; left: 0; top: 0; z-index: 3; pointer-events: none;
+  padding: 4px 10px; border-radius: 999px; background: var(--scrim-night); border: 1px solid var(--night-line);
+  font-size: .75rem; font-weight: 600; color: var(--on-night); white-space: nowrap; opacity: 0; transition: opacity .2s;
+}
+.cursor-chip.is-on { opacity: 1; }
+.cursor-chip.is-key { color: var(--accent-light); }
+
+/* load sequence (only with scripting and motion): the header and copy arrive with the chain */
+.js:not(.static) .site-header:not(.is-ready) { opacity: 0; transform: translateY(-12px); }
+.js:not(.static) .hero .ln, .js:not(.static) .hero-foot { transition: clip-path 1.1s var(--ease-out), opacity .9s var(--ease-out), transform .9s var(--ease-out); }
+.hero .ln { clip-path: inset(0 0 0 0); padding-bottom: .14em; margin-bottom: -.14em; } /* room for descenders inside the wipe */
+.js:not(.static) .hero:not(.s1) .ln:first-child { clip-path: inset(0 100% 0 0); }
+.js:not(.static) .hero:not(.s2) .hero-foot { opacity: 0; transform: translateY(16px); }
+.js:not(.static) .hero:not(.s3) .ln-accent { clip-path: inset(0 100% 0 0); }
+
+/* ---------- intro ---------- */
+.intro-grid { display: grid; gap: var(--space-2xl); }
+.statement { font-size: var(--text-statement); line-height: 1.1; letter-spacing: -0.035em; }
+.intro-side { display: grid; gap: var(--space-xl); align-content: start; }
+.facts { margin: 0; display: grid; }
+.facts > div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--space-md); align-items: baseline; padding-block: 18px; border-top: 1px solid var(--line); }
+.facts > div:last-child { border-bottom: 1px solid var(--line); }
+.facts dt { font-size: 2.25rem; line-height: 1; font-weight: 600; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.facts dt .ph { font-size: 1.25rem; line-height: 1.6; }
+.facts dd { margin: 0; color: var(--ink-soft); }
+@media (min-width: 60rem) { .intro-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: 96px; } }
+.clients { margin-top: var(--section); display: grid; gap: var(--space-lg); padding-top: var(--space-xl); border-top: 1px solid var(--line); }
+.clients-label { font-size: var(--text-sm); color: var(--ink-soft); }
+.client-list { display: flex; flex-wrap: wrap; gap: 14px 44px; font-size: clamp(1.375rem, 1.1rem + 1vw, 2rem); font-weight: 600; letter-spacing: -0.02em; color: var(--ink); }
+.client-list li { transition: color .2s; }
+.client-list li:hover { color: var(--accent-ink); }
+@media (min-width: 60rem) { .clients { grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); align-items: baseline; } }
+
+/* ---------- services ---------- */
+.services { padding-top: 0; }
+.services-grid { display: grid; }
+@media (min-width: 60rem) {
+  .services-grid { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: 64px; align-items: start; }
+  .services .head-block { position: sticky; top: calc(var(--header-h) + 32px); margin-bottom: 0; }
+}
+.service { border-top: 1px solid var(--line); }
+.service:last-child { border-bottom: 1px solid var(--line); }
+.service-link {
+  display: grid; gap: var(--space-md); padding: 28px 16px; margin-inline: -16px; border-radius: var(--r-md);
+  text-decoration: none; transition: background-color .25s var(--ease-out);
+}
+.service-link:hover { background: var(--accent-wash); }
+.service-quote { font-size: var(--text-title); line-height: 1.3; font-weight: 500; letter-spacing: -0.015em; }
+.service-body { display: grid; gap: 4px; }
+.service-name { font-weight: 700; color: var(--accent-ink); }
+.service-desc { color: var(--ink-soft); }
+.service-go { justify-self: start; font-weight: 600; font-size: var(--text-sm); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+@media (min-width: 60rem) {
+  .service-link { grid-template-columns: minmax(0, 6fr) minmax(0, 4fr) auto; align-items: center; gap: var(--gap); padding: 36px 24px; margin-inline: -24px; }
+}
+
+/* ---------- strengths ---------- */
+.strengths { background: var(--band); }
+.strength-chain { display: none; height: 90px; margin-bottom: var(--space-xl); }
+.strength-chain svg { width: 100%; height: 100%; overflow: visible; }
+.sc { fill: none; stroke: var(--line-strong); stroke-width: 10; vector-effect: non-scaling-stroke; transition: stroke .35s var(--ease-out); }
+.sc-bar { stroke-width: 14; stroke-linecap: round; } /* the middle link, seen side on, passing through the other two like the Bridge mark */
+.strength-grid { display: grid; gap: var(--space-xl); }
+.strength { display: grid; gap: 10px; align-content: start; padding-top: var(--space-lg); border-top: 1px solid var(--line-strong); }
+.strength h3 { font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.5rem); }
+.strength-lead { font-size: 1.125rem; font-weight: 600; }
+.strength p:last-child { color: var(--ink-soft); }
+@media (min-width: 60rem) {
+  .strength-chain { display: block; }
+  .strength-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+  .strength { border-top: 0; padding-top: 0; }
+  .strengths.lit-1 .sc-1, .strengths.lit-2 .sc-2, .strengths.lit-3 .sc-3,
+  .strengths:has(.strength[data-i="1"]:hover) .sc-1,
+  .strengths:has(.strength[data-i="2"]:hover) .sc-2,
+  .strengths:has(.strength[data-i="3"]:hover) .sc-3 { stroke: var(--accent); }
+}
+
+/* ---------- work ---------- */
+.work { position: relative; }
+.work-index { border-top: 1px solid var(--line); }
+.project { position: relative; display: grid; gap: 12px; padding-block: 28px; border-bottom: 1px solid var(--line); }
+.project-name { font-size: clamp(1.625rem, 1.3rem + 1.2vw, 2.25rem); transition: color .2s; }
+.project-desc { color: var(--ink-soft); margin-top: 6px; max-width: 46ch; }
+.project-sector { font-weight: 600; }
+.project-outcome { font-size: var(--text-sm); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tags li { padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line-strong); font-size: var(--text-sm); color: var(--ink-soft); }
+.project-art { position: relative; aspect-ratio: 16 / 9; border-radius: var(--r-md); overflow: hidden; background: var(--tone-bg, var(--tone-1-bg)); }
+.project-art span {
+  position: absolute; top: 50%; width: 44%; height: 30%; border-radius: 999px; border: 10px solid var(--tone-ink, var(--tone-1-ink));
+  opacity: .45; transition: transform .7s var(--ease-out), opacity .7s var(--ease-out);
+}
+.project-art span:nth-child(1) { left: -8%; transform: translate(-6%, -50%); }
+.project-art span:nth-child(2) { left: 28%; height: 20%; border-color: var(--accent); opacity: 0; transform: translate(0, -170%) rotate(-24deg); }
+.project-art span:nth-child(3) { left: 64%; transform: translate(6%, -50%); }
+.project:hover .project-art span:nth-child(1), .project-preview.is-on .project-art span:nth-child(1) { transform: translate(12%, -50%); opacity: .9; }
+.project:hover .project-art span:nth-child(3), .project-preview.is-on .project-art span:nth-child(3) { transform: translate(-12%, -50%); opacity: .9; }
+.project:hover .project-art span:nth-child(2), .project-preview.is-on .project-art span:nth-child(2) { opacity: 1; transform: translate(0, -50%); }
+.tone-1 { --tone-bg: var(--tone-1-bg); --tone-ink: var(--tone-1-ink); }
+.tone-2 { --tone-bg: var(--tone-2-bg); --tone-ink: var(--tone-2-ink); }
+.tone-3 { --tone-bg: var(--tone-3-bg); --tone-ink: var(--tone-3-ink); }
+.project-preview { display: none; }
+@media (min-width: 60rem) {
+  .project { grid-template-columns: minmax(0, 5fr) minmax(0, 2fr) minmax(0, 2fr) minmax(0, 2fr); align-items: center; gap: var(--gap); padding-block: 36px; }
+  .project > .project-art { display: none; }
+  .project:hover .project-name { color: var(--accent-ink); }
+}
+@media (min-width: 60rem) and (hover: hover) {
+  .project-preview {
+    display: block; position: fixed; left: 0; top: 0; z-index: 30; width: 300px; pointer-events: none;
+    opacity: 0; transform: translate(var(--px, 0), var(--py, 0)) scale(.92); transition: opacity .25s var(--ease-out), transform .25s var(--ease-out);
+  }
+  .project-preview.is-on { opacity: 1; transform: translate(var(--px, 0), var(--py, 0)) scale(1); }
+  .project-preview .project-art { box-shadow: 0 24px 60px -20px var(--shadow); }
+}
+@media (max-width: 59.99rem) { .project > .project-art { order: -1; } }
+.work-next {
+  margin-top: var(--space-2xl); display: grid; gap: var(--space-md); padding: clamp(28px, 4vw, 48px); border-radius: var(--r-lg);
+  background: var(--night); color: var(--on-night); text-decoration: none; transition: transform .3s var(--ease-out);
+}
+.work-next:hover { transform: translateY(-3px); }
+.work-next-title { font-size: var(--text-section); font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; }
+.work-next-line { color: var(--on-night-soft); max-width: 48ch; }
+.work-next .btn { justify-self: start; }
+@media (min-width: 60rem) {
+  .work-next { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: end; column-gap: var(--gap); }
+  .work-next-title { grid-row: span 2; }
+}
+
+/* ---------- approach ---------- */
+.approach { background: var(--surface); border-block: 1px solid var(--line); }
+.steps { position: relative; display: grid; gap: var(--space-xl); }
+.steps::before, .steps::after { /* the line the steps hang on, and the accent that draws along it */
+  content: ""; position: absolute; left: 23px; top: 24px; bottom: 24px; width: 2px; background: var(--line);
+}
+.steps::after { background: var(--accent); transform-origin: top; transform: scaleY(var(--fill, 1)); transition: transform 1.6s var(--ease-out); }
+.step { position: relative; display: grid; grid-template-columns: 48px minmax(0, 1fr); column-gap: var(--space-lg); row-gap: 6px; align-content: start; }
+.step-num {
+  grid-row: span 2; position: relative; z-index: 1; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%;
+  background: var(--surface); border: 2px solid var(--accent); color: var(--accent-ink); font-weight: 700; font-variant-numeric: tabular-nums;
+  transition: background-color .4s var(--ease-out), color .4s var(--ease-out);
+}
+.step h3 { padding-top: 8px; }
+.step p { color: var(--ink-soft); }
+.step:hover .step-num { background: var(--accent); color: var(--on-accent); }
+@media (min-width: 60rem) {
+  .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); }
+  .steps::before, .steps::after { left: 24px; right: 24px; top: 23px; bottom: auto; width: auto; height: 2px; }
+  .steps::after { transform-origin: left; transform: scaleX(var(--fill, 1)); }
+  .step { grid-template-columns: minmax(0, 1fr); row-gap: 10px; }
+  .step-num { grid-row: auto; }
+  .step h3 { padding-top: 14px; }
+}
+.js:not(.static) .steps:not(.is-seen) { --fill: 0; }
+
+/* ---------- team ---------- */
+.team-grid { display: grid; gap: var(--space-xl); }
+@media (min-width: 40rem) { .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); } }
+@media (min-width: 60rem) { .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.person { display: grid; gap: 6px; align-content: start; }
+.portrait { aspect-ratio: 4 / 5; border-radius: var(--r-md); margin-bottom: 14px; background: var(--tone-bg); display: grid; place-items: center; overflow: hidden; }
+.portrait span { font-size: clamp(3rem, 2rem + 3vw, 4.5rem); font-weight: 600; letter-spacing: -0.04em; color: var(--tone-ink); transition: transform .6s var(--ease-out); }
+.person:hover .portrait span { transform: scale(1.08); }
+.person-name { font-size: 1.25rem; }
+.person-role { color: var(--ink-soft); margin-bottom: 8px; }
+
+/* ---------- questions ---------- */
+.faq-grid { display: grid; }
+@media (min-width: 60rem) {
+  .faq-grid { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: 64px; align-items: start; }
+  .faq .head-block { margin-bottom: 0; }
+}
+.qa { border-top: 1px solid var(--line); }
+.qa:last-child { border-bottom: 1px solid var(--line); }
+.q {
+  width: 100%; display: flex; justify-content: space-between; align-items: center; gap: var(--space-md);
+  padding: 22px 0; border: 0; background: none; text-align: left; cursor: pointer;
+  font-size: 1.125rem; line-height: 1.4; font-weight: 600; transition: color .2s;
+}
+.q:hover { color: var(--accent-ink); }
+.q::after {
+  content: ""; flex: none; width: 12px; height: 12px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translate(-3px, -3px); transition: transform .35s var(--ease-out);
+}
+.q[aria-expanded="true"]::after { transform: rotate(225deg); }
+.a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease-out); }
+.a > div { overflow: hidden; min-height: 0; }
+.a p { padding-bottom: 22px; color: var(--ink-soft); max-width: 60ch; }
+.qa.is-open .a, html:not(.js) .a { grid-template-rows: 1fr; }
+
+/* ---------- diagnostic ---------- */
+.diagnostic { background: var(--night); color: var(--on-night); }
+.diagnostic .lead { color: var(--on-night-soft); }
+.diag-grid { display: grid; gap: var(--space-2xl); }
+@media (min-width: 60rem) { .diag-grid { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); column-gap: 96px; align-items: start; } }
+.diag-copy { display: grid; gap: var(--space-lg); align-content: start; }
+.diag-copy h2 { max-width: 14ch; }
+.diag-list { display: grid; gap: 10px; }
+.diag-list li { position: relative; padding-left: 26px; }
+.diag-list li::before { content: ""; position: absolute; left: 0; top: .8em; width: 12px; height: 2px; background: var(--accent-light); }
+.builder { margin-top: var(--space-md); }
+.builder svg { width: 160px; height: 80px; overflow: visible; }
+.builder path { fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.builder .ghosts path { stroke: var(--night-line); stroke-dasharray: 2 3; }
+.builder .b-left, .builder .b-right { stroke: var(--on-night); stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s var(--ease-out); }
+.builder .b-bar { stroke: var(--accent); stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .7s var(--ease-out); }
+.builder.has-left .b-left, .builder.has-right .b-right, .builder.has-bar .b-bar { stroke-dashoffset: 0; }
+.builder.has-gap .ghosts path:nth-child(3) { stroke: var(--accent-light); }
+.builder-status { margin-top: 8px; font-size: var(--text-sm); color: var(--on-night-soft); }
+.builder.has-bar .builder-status { color: var(--accent-light); }
+html:not(.js) .builder path { stroke-dashoffset: 0; }
+html:not(.js) .builder-status { display: none; }
+.diag-form { display: grid; gap: var(--space-md); padding: clamp(24px, 3vw, 36px); border-radius: var(--r-lg); background: var(--surface); color: var(--ink); }
+.field { display: grid; gap: 6px; }
+.field label { font-size: var(--text-sm); font-weight: 600; color: var(--ink-soft); }
+.field input, .field select {
+  min-height: 52px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--surface);
+  color: var(--ink); font: inherit; transition: border-color .2s, box-shadow .2s;
+}
+.field input:hover, .field select:hover { border-color: var(--ink-soft); }
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-wash); }
+.field.has-error input { border-color: var(--error); }
+.field-error { font-size: var(--text-sm); color: var(--error); }
+.field-error:empty { display: none; }
+.form-note { font-size: var(--text-sm); color: var(--ink-soft); text-align: center; }
+.form-success { padding: 12px 14px; border-radius: 12px; background: var(--accent-wash); font-size: var(--text-sm); }
+
+/* ---------- footer ---------- */
+.footer { background: var(--night); color: var(--on-night-soft); padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px)); }
+.footer .container { display: grid; gap: var(--space-xl); padding-top: var(--space-2xl); border-top: 1px solid var(--night-line); }
+.footer-mast { font-size: clamp(2.25rem, 1.2rem + 4.2vw, 5rem); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em; color: var(--on-night); max-width: 16ch; }
+.footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-lg); align-items: center; }
+.footer .brand { color: var(--on-night); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.footer-links a { text-decoration: none; }
+.footer-links a:hover { color: var(--on-night); text-decoration: underline; }
+.footer .ph { color: var(--on-night-soft); border-color: var(--night-line); }
+.footer-legal { font-size: var(--text-sm); }
+
+/* ---------- reveal (once, from a visible default) ---------- */
+.js:not(.static) [data-reveal]:not(.is-seen) { opacity: 0; transform: translateY(20px); }
+.js:not(.static) [data-reveal] { transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out); transition-delay: var(--d, 0s); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+}
+
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Missing Link",
+  "description": "Integrated marketing communications: strategy, brand and growth.",
+  "url": "https://mlinkm.com/",
+  "email": "hello@mlinkm.com",
+  "telephone": "+91 99661 33369",
+  "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressCountry": "IN" }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-tone="night">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Missing Link, back to top">
+      <svg class="brand-mark" viewBox="0 0 100 50" aria-hidden="true">
+        <path d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33" />
+        <path d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17" />
+        <path class="bar" d="M42 32 L58 18" />
+      </svg>
+      <span class="brand-name">Missing Link</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#services" data-nav>Services</a></li>
+        <li><a href="#work" data-nav>Work</a></li>
+        <li><a href="#approach" data-nav>Approach</a></li>
+        <li><a href="#team" data-nav>Team</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm header-cta" href="#diagnostic">Book a diagnostic</a>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#diagnostic" class="menu-cta">Book a free diagnostic</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <!-- Hero: the chain plays its story once, on load -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <canvas id="chain-canvas" aria-label="A 3D chain. The missing link drops into place. Drag to turn it." role="img"></canvas>
+    <div class="hero-fallback" aria-hidden="true">
+      <svg viewBox="0 0 100 50"><path d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33"/><path d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17"/><path class="bar" d="M42 32 L58 18"/></svg>
+    </div>
+    <div class="cursor-chip" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <h1 class="hero-title" id="hero-title">
+        <span class="ln">Your marketing has a missing link.</span>
+        <span class="ln ln-accent">We find it&nbsp;— and fix it.</span>
+      </h1>
+      <div class="hero-foot">
+        <p class="lead hero-lead">You work directly with senior people, not account managers. We set the strategy, sharpen the brand and run the work that grows the business.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#diagnostic">Book a free 30 minute diagnostic</a>
+          <a class="btn btn-ghost" href="#work">See our work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro: the problem in one sentence, the belief, the facts, the clients -->
+  <section class="section intro" aria-labelledby="intro-title">
+    <div class="container intro-grid">
+      <h2 class="statement" id="intro-title" data-reveal>Most marketing breaks in the gap between what you plan and what you get.</h2>
+      <div class="intro-side" data-reveal>
+        <p class="lead">Strategy, brand and growth only work when they are linked. Most teams own one piece. We connect all three, and stay to deliver the result.</p>
+        <dl class="facts">
+          <div><dt>23+</dt><dd>years of senior marketing leadership</dd></div>
+          <div><dt>8</dt><dd>industries served</dd></div>
+          <div><dt><span class="ph" tabindex="0">[X]</span></dt><dd>engagements delivered</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="container clients" data-reveal>
+      <p class="clients-label">Our team has worked with</p>
+      <ul class="client-list">
+        <li>ITC</li><li>NMDC</li><li>Dell</li><li>Google</li><li>Zoho</li><li>Cognizant</li><li>Hyderabad FC</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Services: which of these sounds like you -->
+  <section class="section services" id="services" aria-labelledby="services-title">
+    <div class="container services-grid">
+      <div class="head-block" data-reveal>
+        <h2 id="services-title">Which of these sounds like you?</h2>
+        <p class="lead">Pick the one that fits. It tells us where to start.</p>
+      </div>
+      <ol class="service-rows" role="list">
+        <li class="service" data-reveal>
+          <a class="service-link" href="#diagnostic" data-need="Strategy">
+            <span class="service-quote">“We’re busy, but not sure we’re going in the right direction.”</span>
+            <span class="service-body">
+              <span class="service-name">Strategy</span>
+              <span class="service-desc">Business and marketing strategy, advisory and transformation.</span>
+            </span>
+            <span class="service-go">Start with strategy</span>
+          </a>
+        </li>
+        <li class="service" data-reveal>
+          <a class="service-link" href="#diagnostic" data-need="Brand">
+            <span class="service-quote">“People don’t understand what we stand for.”</span>
+            <span class="service-body">
+              <span class="service-name">Brand</span>
+              <span class="service-desc">Brand strategy, identity, PR and corporate communications.</span>
+            </span>
+            <span class="service-go">Start with brand</span>
+          </a>
+        </li>
+        <li class="service" data-reveal>
+          <a class="service-link" href="#diagnostic" data-need="Growth">
+            <span class="service-quote">“Our marketing isn’t turning into results.”</span>
+            <span class="service-body">
+              <span class="service-name">Growth</span>
+              <span class="service-desc">Digital, performance, campaigns and creative.</span>
+            </span>
+            <span class="service-go">Start with growth</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Why us: three strengths, joined like links -->
+  <section class="band strengths" aria-labelledby="strengths-title">
+    <div class="container">
+      <div class="head-block head-split" data-reveal>
+        <h2 id="strengths-title">Senior thinking. Real delivery.</h2>
+        <p class="lead">Three strengths, held by the same senior team from the first conversation to the result.</p>
+      </div>
+      <div class="strength-chain" aria-hidden="true">
+        <svg viewBox="0 0 1200 90" preserveAspectRatio="none"><rect class="sc sc-1" x="8" y="12" width="400" height="66" rx="33"/><line class="sc sc-2 sc-bar" x1="350" y1="45" x2="850" y2="45"/><rect class="sc sc-3" x="792" y="12" width="400" height="66" rx="33"/></svg>
+      </div>
+      <ul class="strength-grid" role="list">
+        <li class="strength" data-i="1" data-reveal>
+          <h3>Intelligence</h3>
+          <p class="strength-lead">We understand the business first.</p>
+          <p>Markets, competitors and the bigger picture, before any recommendation.</p>
+        </li>
+        <li class="strength" data-i="2" data-reveal>
+          <h3>Experience</h3>
+          <p class="strength-lead">We’ve solved this before.</p>
+          <p>23+ years of senior marketing leadership across many industries.</p>
+        </li>
+        <li class="strength" data-i="3" data-reveal>
+          <h3>Execution</h3>
+          <p class="strength-lead">We deliver what we recommend.</p>
+          <p>Strategy turned into measurable work, by the same senior team.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Work: an index of projects with a preview on hover -->
+  <section class="section work" id="work" aria-labelledby="work-title">
+    <div class="container">
+      <div class="head-block head-split" data-reveal>
+        <h2 id="work-title">Selected work</h2>
+        <p class="lead">Projects across rural enterprise, infrastructure and technology.</p>
+      </div>
+      <ol class="work-index" role="list">
+        <li class="project tone-1" data-reveal>
+          <div class="project-art" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="project-main">
+            <h3 class="project-name">ORMAS</h3>
+            <p class="project-desc">Building visibility for Odisha’s rural enterprise ecosystem.</p>
+          </div>
+          <p class="project-sector">Rural enterprise</p>
+          <ul class="tags" aria-label="Services"><li>Strategy</li><li>Brand</li></ul>
+          <p class="project-outcome"><span class="ph" tabindex="0">[Verified outcome]</span></p>
+        </li>
+        <li class="project tone-2" data-reveal>
+          <div class="project-art" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="project-main">
+            <h3 class="project-name">Paradip Port Authority</h3>
+            <p class="project-desc">Connecting maritime infrastructure with strategic communication.</p>
+          </div>
+          <p class="project-sector">Infrastructure</p>
+          <ul class="tags" aria-label="Services"><li>Brand</li></ul>
+          <p class="project-outcome"><span class="ph" tabindex="0">[Verified outcome]</span></p>
+        </li>
+        <li class="project tone-3" data-reveal>
+          <div class="project-art" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="project-main">
+            <h3 class="project-name"><span class="ph" tabindex="0">[Technology client]</span></h3>
+            <p class="project-desc">Making a complex B2B proposition market ready.</p>
+          </div>
+          <p class="project-sector">Technology</p>
+          <ul class="tags" aria-label="Services"><li>Strategy</li><li>Growth</li></ul>
+          <p class="project-outcome"><span class="ph" tabindex="0">[Verified outcome]</span></p>
+        </li>
+      </ol>
+      <a class="work-next" href="#diagnostic" data-reveal>
+        <span class="work-next-title">Your business could be next.</span>
+        <span class="work-next-line">Start with a free 30 minute diagnostic and an honest view of where the gap is.</span>
+        <span class="btn btn-primary">Book a diagnostic</span>
+      </a>
+    </div>
+    <div class="project-preview" aria-hidden="true"><div class="project-art"><span></span><span></span><span></span></div></div>
+  </section>
+
+  <!-- Approach: four steps -->
+  <section class="section approach" id="approach" aria-labelledby="approach-title">
+    <div class="container">
+      <div class="head-block" data-reveal>
+        <h2 id="approach-title">Four steps from question to result.</h2>
+      </div>
+      <ol class="steps" data-reveal>
+        <li class="step"><span class="step-num" aria-hidden="true">1</span><h3>Understand</h3><p>We learn your business, audience and market.</p></li>
+        <li class="step"><span class="step-num" aria-hidden="true">2</span><h3>Strategise</h3><p>We set the direction, priorities and plan.</p></li>
+        <li class="step"><span class="step-num" aria-hidden="true">3</span><h3>Activate</h3><p>We run the campaigns and the work.</p></li>
+        <li class="step"><span class="step-num" aria-hidden="true">4</span><h3>Measure</h3><p>We track results and improve.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section team" id="team" aria-labelledby="team-title">
+    <div class="container">
+      <div class="head-block" data-reveal>
+        <h2 id="team-title">The people you’ll work with.</h2>
+      </div>
+      <ul class="team-grid" role="list">
+        <li class="person tone-1" data-reveal>
+          <div class="portrait" role="img" aria-label="Portrait of Mrinal K Ray, to be added"><span>MR</span></div>
+          <h3 class="person-name">Mrinal K Ray</h3>
+          <p class="person-role">Founder &amp; CEO</p>
+          <ul class="tags" aria-label="Focus"><li>Strategy</li><li>Growth</li></ul>
+        </li>
+        <li class="person tone-2" data-reveal>
+          <div class="portrait" role="img" aria-label="Portrait of Aparajita Ray, to be added"><span>AR</span></div>
+          <h3 class="person-name">Aparajita Ray</h3>
+          <p class="person-role">Co-Founder &amp; Director</p>
+          <ul class="tags" aria-label="Focus"><li>Operations</li></ul>
+        </li>
+        <li class="person tone-3" data-reveal>
+          <div class="portrait" role="img" aria-label="Portrait of Somaak Dutta, to be added"><span>SD</span></div>
+          <h3 class="person-name">Somaak Dutta</h3>
+          <p class="person-role">Director</p>
+          <ul class="tags" aria-label="Focus"><li>Creative strategy</li><li>Execution</li></ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Questions -->
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <div class="container faq-grid">
+      <div class="head-block" data-reveal>
+        <h2 id="faq-title">Before you book.</h2>
+        <p class="lead">Short answers to what people ask first.</p>
+      </div>
+      <div class="faq-list" data-reveal>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a1" id="q1">What happens in the diagnostic?</button><div class="a" id="a1" role="region" aria-labelledby="q1"><div><p>In 30 minutes we look at where your strategy, brand and growth are disconnected, agree the two or three priorities that matter most, and give you an honest view of whether we’re the right fit.</p></div></div></div>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a2" id="q2">Is the diagnostic really free?</button><div class="a" id="a2" role="region" aria-labelledby="q2"><div><p>Yes. It’s 30 minutes, free, and you leave with a clear next step whether or not we work together.</p></div></div></div>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a3" id="q3">Who will I actually work with?</button><div class="a" id="a3" role="region" aria-labelledby="q3"><div><p>Senior people, not account managers. The same team that sets the strategy delivers the work.</p></div></div></div>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a4" id="q4">Do you only advise, or do you deliver too?</button><div class="a" id="a4" role="region" aria-labelledby="q4"><div><p>Both. We set the strategy, sharpen the brand and run the campaigns, then track results and improve.</p></div></div></div>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a5" id="q5">Which industries do you work in?</button><div class="a" id="a5" role="region" aria-labelledby="q5"><div><p>We’ve served 8 industries, from rural enterprise and maritime infrastructure to technology.</p></div></div></div>
+        <div class="qa"><button type="button" class="q" aria-expanded="false" aria-controls="a6" id="q6">Where are you based?</button><div class="a" id="a6" role="region" aria-labelledby="q6"><div><p>Hyderabad. You can also reach us on WhatsApp at +91 99661 33369.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diagnostic: the form builds the link -->
+  <section class="band diagnostic" id="diagnostic" aria-labelledby="diag-title">
+    <div class="container diag-grid">
+      <div class="diag-copy" data-reveal>
+        <h2 id="diag-title">30 minutes. Free. A clear next step.</h2>
+        <p class="lead">The Missing Link diagnostic shows you:</p>
+        <ul class="diag-list">
+          <li>Where your strategy, brand and growth are disconnected</li>
+          <li>The two or three priorities that matter most</li>
+          <li>An honest view of whether we’re the right fit</li>
+        </ul>
+        <div class="builder" aria-hidden="true">
+          <svg viewBox="0 0 100 50">
+            <g class="ghosts"><path d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33"/><path d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17"/><path d="M42 32 L58 18"/></g>
+            <path class="b-left" pathLength="1" d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33"/>
+            <path class="b-right" pathLength="1" d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17"/>
+            <path class="b-bar" pathLength="1" d="M42 32 L58 18"/>
+          </svg>
+          <p class="builder-status">Fill in the form to complete the link.</p>
+        </div>
+      </div>
+      <form class="diag-form" novalidate action="mailto:hello@mlinkm.com" method="post" enctype="text/plain" data-reveal>
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="f-email">Work email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="f-org">Organisation</label>
+          <input id="f-org" name="org" type="text" autocomplete="organization" required>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="f-need">What do you need help with?</label>
+          <select id="f-need" name="need">
+            <option>Strategy</option><option>Brand</option><option>Growth</option><option selected>Not sure yet</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Request my diagnostic</button>
+        <p class="form-note">Or WhatsApp us on <a href="https://wa.me/919966133369" target="_blank" rel="noopener">+91 99661 33369</a></p>
+        <div class="form-success" role="status" hidden></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer-mast">Strategy. Brand. Growth. Linked.</p>
+    <div class="footer-row">
+      <a class="brand" href="#top" aria-label="Missing Link, back to top">
+        <svg class="brand-mark" viewBox="0 0 100 50" aria-hidden="true">
+          <path d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33" />
+          <path d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17" />
+          <path class="bar" d="M42 32 L58 18" />
+        </svg>
+        <span class="brand-name">Missing Link</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@mlinkm.com">hello@mlinkm.com</a></li>
+        <li><a href="tel:+919966133369">+91 99661 33369</a></li>
+        <li>Hyderabad</li>
+        <li><span class="ph" tabindex="0">[LinkedIn URL]</span></li>
+      </ul>
+    </div>
+    <p class="footer-legal">© 2026 Missing Link</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+const createChainScene = (() => {
+// Missing Link hero: a 3D chain with one link missing.
+// Story progress s (0..1) drives the scene; the page maps scroll to s.
+//   0.00 to 0.36  chains close in, a gap stays open
+//   0.12 to 0.62  the gap glows, sparks gather around it
+//   0.46 to 0.76  the magenta link flies in and locks into the gap
+//   0.74 to 0.86  lock flash, the chain pulls taut, sparks burst
+//   0.78 to 1.00  camera settles on a three quarter view
+// Interaction: hover lifts a link, drag turns the chain, click the magenta link to pulse it.
+
+// The composer encodes the clear colour twice and ACES darkens it, so these linear values are
+// calibrated to read as the brand's night #13142B on screen; the fog is the same colour after one encode.
+const CLEAR = new THREE.Color().setRGB(0.001636, 0.001623, 0.004000);
+const FOG = new THREE.Color().setRGB(0.0211, 0.0210, 0.0508);
+const SPACING = 1.45; // distance between link centres, tuned so links interlock
+const PER_SIDE = 6;
+
+const clamp01 = (v) => Math.min(1, Math.max(0, v));
+const smooth = (a, b, v) => { const t = clamp01((v - a) / (b - a)); return t * t * (3 - 2 * t); };
+const bump = (a, b, v) => { const t = clamp01((v - a) / (b - a)); return Math.sin(t * Math.PI); };
+const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+const lerp = (a, b, t) => a + (b - a) * t;
+
+// Stadium shaped centreline of a chain link, lying in the XY plane, long axis on X.
+class StadiumCurve extends THREE.Curve {
+  constructor(straight = 0.8, radius = 0.5) {
+    super();
+    this.s = straight;
+    this.r = radius;
+    this.total = 2 * straight + 2 * Math.PI * radius;
+  }
+  getPoint(t, target = new THREE.Vector3()) {
+    const { s, r } = this;
+    let d = t * this.total;
+    if (d < s) return target.set(-s / 2 + d, r, 0);
+    d -= s;
+    const arc = Math.PI * r;
+    if (d < arc) { const a = Math.PI / 2 - d / r; return target.set(s / 2 + r * Math.cos(a), r * Math.sin(a), 0); }
+    d -= arc;
+    if (d < s) return target.set(s / 2 - d, -r, 0);
+    d -= s;
+    const a = -Math.PI / 2 - d / r;
+    return target.set(-s / 2 + r * Math.cos(a), r * Math.sin(a), 0);
+  }
+}
+
+function dotTexture() {
+  const c = document.createElement('canvas');
+  c.width = c.height = 64;
+  const g = c.getContext('2d');
+  const grd = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+  grd.addColorStop(0, 'rgba(255,255,255,1)');
+  grd.addColorStop(0.35, 'rgba(255,255,255,0.55)');
+  grd.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = grd;
+  g.fillRect(0, 0, 64, 64);
+  const tex = new THREE.CanvasTexture(c);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+}
+
+function createChainScene(canvas, { reducedMotion = false } = {}) {
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+  const small = Math.min(window.innerWidth, window.innerHeight) < 700; // phones: lighter render
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small ? 1.5 : 1.75));
+  // EffectComposer + OutputPass encode the clear colour twice and ACES darkens it.
+  // These linear values are calibrated so the canvas reads exactly #0B0E1A on screen.
+  renderer.setClearColor(CLEAR, 1);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 0.9;
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(FOG, 13, 30);
+
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+
+  const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
+
+  // ---------- lights ----------
+  const key = new THREE.DirectionalLight(0xffffff, 0.9);
+  key.position.set(4, 6, 8);
+  scene.add(key);
+  const rim = new THREE.DirectionalLight(0x9089d0, 1.5);
+  rim.position.set(-6, 2, -6);
+  scene.add(rim);
+  const gapLight = new THREE.PointLight(0xb43ad2, 0, 9, 1.6);
+  gapLight.position.set(0, 0, 1.6);
+  scene.add(gapLight);
+
+  // ---------- chain ----------
+  const curve = new StadiumCurve(0.8, 0.5);
+  const linkGeo = new THREE.TubeGeometry(curve, 180, 0.15, 24, true);
+  const ghostGeo = new THREE.TubeGeometry(curve, 120, 0.028, 8, true);
+
+  const root = new THREE.Group();
+  scene.add(root);
+  const left = new THREE.Group();
+  const right = new THREE.Group();
+  root.add(left, right);
+
+  const cEdge = new THREE.Color('#C9CCE0');
+  const cNear = new THREE.Color('#E3DDF2');
+  const tint = (t) => cEdge.clone().lerp(cNear, 1 - Math.abs(t - 0.5) * 2);
+
+  const links = [];
+  for (let i = 1; i <= PER_SIDE; i++) {
+    for (const side of [-1, 1]) {
+      const x = side * i * SPACING;
+      const t = (x + PER_SIDE * SPACING) / (2 * PER_SIDE * SPACING);
+      const color = tint(t);
+      const mat = new THREE.MeshPhysicalMaterial({
+        color,
+        emissive: color.clone(),
+        emissiveIntensity: 0,
+        metalness: 0.95,
+        roughness: 0.3,
+        clearcoat: 0.5,
+        clearcoatRoughness: 0.25,
+        envMapIntensity: 0.75,
+      });
+      const m = new THREE.Mesh(linkGeo, mat);
+      m.position.x = i * SPACING * side;
+      m.rotation.x = i % 2 ? Math.PI / 2 : 0;
+      m.userData = { i, side, baseRotX: m.rotation.x, hover: 0, kick: 0 };
+      (side < 0 ? left : right).add(m);
+      links.push(m);
+    }
+  }
+
+  // the missing link
+  const keyMat = new THREE.MeshPhysicalMaterial({
+    color: new THREE.Color('#D98BEA'),
+    emissive: new THREE.Color('#B43AD2'),
+    emissiveIntensity: 0.5,
+    metalness: 0.55,
+    roughness: 0.18,
+    clearcoat: 1,
+    clearcoatRoughness: 0.08,
+    envMapIntensity: 1.4,
+  });
+  const keyLink = new THREE.Mesh(linkGeo, keyMat);
+  keyLink.userData = { hover: 0 };
+  root.add(keyLink);
+
+  // glowing outline that marks the empty slot
+  const ghostMat = new THREE.MeshBasicMaterial({
+    color: new THREE.Color('#D98BEA'),
+    transparent: true,
+    opacity: 0,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    toneMapped: false,
+  });
+  const ghost = new THREE.Mesh(ghostGeo, ghostMat);
+  root.add(ghost);
+
+  // ---------- particles ----------
+  const sprite = dotTexture();
+
+  const DUST = small ? 380 : 700;
+  const dustPos = new Float32Array(DUST * 3);
+  for (let i = 0; i < DUST; i++) {
+    dustPos[i * 3] = (Math.random() - 0.5) * 34;
+    dustPos[i * 3 + 1] = (Math.random() - 0.5) * 18;
+    dustPos[i * 3 + 2] = (Math.random() - 0.5) * 20 - 3;
+  }
+  const dustGeo = new THREE.BufferGeometry();
+  dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
+  const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({
+    size: 0.06, map: sprite, color: 0x9a9ec4, transparent: true, opacity: 0.32,
+    depthWrite: false, blending: THREE.AdditiveBlending,
+  }));
+  scene.add(dust);
+
+  const SPARKS = small ? 140 : 220;
+  const sparkDir = [];
+  for (let i = 0; i < SPARKS; i++) {
+    const v = new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
+    sparkDir.push({ v, speed: 0.6 + Math.random() * 0.9, phase: Math.random() * Math.PI * 2, orbit: 0.7 + Math.random() * 0.6 });
+  }
+  const sparkPos = new Float32Array(SPARKS * 3);
+  const sparkGeo = new THREE.BufferGeometry();
+  sparkGeo.setAttribute('position', new THREE.BufferAttribute(sparkPos, 3));
+  const sparkMat = new THREE.PointsMaterial({
+    size: 0.09, map: sprite, color: 0xd98bea, transparent: true, opacity: 0,
+    depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false,
+  });
+  const sparks = new THREE.Points(sparkGeo, sparkMat);
+  root.add(sparks);
+
+  // ---------- post ----------
+  const composer = new EffectComposer(renderer);
+  composer.addPass(new RenderPass(scene, camera));
+  const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.35, 0.35, 0.92);
+  composer.addPass(bloom);
+  composer.addPass(new OutputPass());
+
+  // ---------- camera path ----------
+  const camPath = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(1.2, 1.2, 15.5),
+    new THREE.Vector3(0.2, 1.3, 14.6),
+    new THREE.Vector3(-1.6, 1.6, 14),
+  ]);
+
+  // ---------- state ----------
+  const state = {
+    progress: reducedMotion ? 1 : 0, // target story progress
+    intro: reducedMotion ? 1 : 0,    // 0..1 entrance, tweened from outside
+    mouseX: 0, mouseY: 0,
+  };
+  let p = state.progress;
+  let mx = 0, my = 0;
+  let active = true;
+  let distScale = 1;
+  let yShift = 0;
+
+  // ---------- interaction ----------
+  const raycaster = new THREE.Raycaster();
+  const ndc = new THREE.Vector2(9, 9);
+  let pointerMoved = false;
+  let hovered = null;
+  let hoverKind = '';
+  let impulse = 0;
+  const drag = { on: false, x: 0, y: 0, rotY: 0, rotX: 0, vY: 0, vX: 0, moved: 0 };
+
+  function setNdc(e) {
+    const r = canvas.getBoundingClientRect();
+    ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+    pointerMoved = true;
+  }
+  canvas.addEventListener('pointermove', (e) => {
+    setNdc(e);
+    if (!drag.on) return;
+    const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    drag.x = e.clientX; drag.y = e.clientY;
+    drag.moved += Math.abs(dx) + Math.abs(dy);
+    drag.vY = dx * 0.006; drag.vX = dy * 0.003;
+    drag.rotY += drag.vY; drag.rotX += drag.vX;
+  });
+  let tap = null; // on touch screens a tap pulses a link; dragging keeps scrolling the page
+  canvas.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'touch') { tap = { x: e.clientX, y: e.clientY }; return; }
+    setNdc(e);
+    drag.on = true; drag.moved = 0; drag.x = e.clientX; drag.y = e.clientY;
+    canvas.setPointerCapture(e.pointerId);
+    canvas.classList.add('is-dragging');
+  });
+  const endDrag = () => {
+    if (!drag.on) return;
+    drag.on = false;
+    canvas.classList.remove('is-dragging');
+    if (drag.moved < 6) { // a click, not a drag
+      if (hovered === keyLink) impulse = 1;
+      else if (hovered) hovered.userData.kick = 1;
+    }
+  };
+  canvas.addEventListener('pointerup', (e) => {
+    if (e.pointerType !== 'touch') return endDrag();
+    if (tap && Math.hypot(e.clientX - tap.x, e.clientY - tap.y) < 10) {
+      setNdc(e);
+      raycaster.setFromCamera(ndc, camera);
+      const hit = raycaster.intersectObjects(pickables.filter((m) => m.visible), false)[0];
+      if (hit) { if (hit.object === keyLink) impulse = 1; else hit.object.userData.kick = 1; }
+      ndc.set(9, 9);
+    }
+    tap = null;
+  });
+  canvas.addEventListener('pointercancel', () => { tap = null; endDrag(); });
+  canvas.addEventListener('pointerleave', () => { ndc.set(9, 9); pointerMoved = true; });
+
+  function setHover(mesh) {
+    if (mesh === hovered) return;
+    hovered = mesh;
+    const kind = !mesh ? '' : mesh === keyLink ? 'key' : 'link';
+    if (kind !== hoverKind) {
+      hoverKind = kind;
+      canvas.dispatchEvent(new CustomEvent('chainhover', { detail: kind }));
+    }
+  }
+
+  function resize() {
+    const w = canvas.clientWidth || window.innerWidth;
+    const h = canvas.clientHeight || window.innerHeight;
+    renderer.setSize(w, h, false);
+    composer.setSize(w, h);
+    bloom.setSize(w, h);
+    camera.aspect = w / h;
+    distScale = camera.aspect < 1 ? Math.min(1.75, 0.78 / camera.aspect) : 1;
+    // look below the chain so it sits in the upper part of the frame, clear of the headline
+    yShift = camera.aspect < 0.75 ? -3.4 : camera.aspect < 1.2 ? -2.6 : -2.2;
+    // phones: the finished chain sits lower, between the answer headline and the offer below it
+
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const tmp = new THREE.Vector3();
+  const look = new THREE.Vector3();
+  const clock = new THREE.Clock();
+  const pickables = [...links, keyLink];
+
+  function update() {
+    const time = clock.getElapsedTime();
+    p += (state.progress - p) * (reducedMotion ? 1 : 0.09);
+    mx += (state.mouseX - mx) * 0.05;
+    my += (state.mouseY - my) * 0.05;
+    const intro = state.intro;
+
+    const introOff = (1 - easeOutCubic(intro)) * 15;
+    const gapExtra = (1 - smooth(0.0, 0.36, p)) * 1.35;
+    const lock = smooth(0.74, 0.8, p);
+    const pulse = bump(0.75, 0.86, p);
+    impulse *= 0.94;
+    const tension = pulse * 0.16 + impulse * 0.12;
+    left.position.x = -(gapExtra + introOff + tension);
+    right.position.x = gapExtra + introOff + tension;
+
+    const slack = (1 - smooth(0.72, 0.88, p)) * 0.07 + (1 - intro) * 0.25;
+    left.rotation.z = slack;
+    right.rotation.z = -slack;
+    left.position.y = right.position.y = -slack * 0.6;
+
+    // hover picking, only when the pointer moved
+    if (pointerMoved && !drag.on) {
+      pointerMoved = false;
+      raycaster.setFromCamera(ndc, camera);
+      const hit = raycaster.intersectObjects(pickables.filter((m) => m.visible), false)[0];
+      setHover(hit ? hit.object : null);
+    }
+
+    for (const m of links) {
+      const u = m.userData;
+      u.hover += ((hovered === m ? 1 : 0) - u.hover) * 0.15;
+      u.kick *= 0.95;
+      const sway = reducedMotion ? 0 : Math.sin(time * 1.1 + u.i * 0.7 + u.side) * 0.05 * (0.3 + slack * 8);
+      m.rotation.x = u.baseRotX + sway + Math.sin(time * 18) * u.kick * 0.25;
+      m.rotation.y = u.side * (1 - intro) * 0.6;
+      m.material.emissiveIntensity = u.hover * 0.35 + u.kick * 0.6;
+      m.scale.setScalar(1 + u.hover * 0.07);
+    }
+
+    const f = easeInOutCubic(smooth(0.46, 0.76, p));
+    keyLink.visible = f > 0.001;
+    keyLink.userData.hover += ((hovered === keyLink ? 1 : 0) - keyLink.userData.hover) * 0.15;
+    keyLink.position.set(
+      lerp(3.2, 0, f) + Math.sin(f * Math.PI) * 1.4,
+      lerp(4.6, 0, easeOutCubic(f)) + left.position.y,
+      lerp(5.5, 0, f)
+    );
+    keyLink.rotation.set((1 - f) * Math.PI * 3, (1 - f) * Math.PI * 2.2, (1 - f) * 1.3);
+    keyLink.scale.setScalar(Math.min(1, 0.2 + f * 4) * (1 + pulse * 0.06 + impulse * 0.1 + keyLink.userData.hover * 0.05));
+    keyMat.emissiveIntensity = 0.45 + pulse * 1.5 + lock * 0.3 + impulse * 1.6 + keyLink.userData.hover * 0.4;
+
+    const ghostOn = smooth(0.12, 0.28, p) * (1 - smooth(0.62, 0.74, p));
+    ghostMat.opacity = ghostOn * (0.55 + 0.45 * Math.sin(time * 3.2));
+    ghost.position.y = left.position.y;
+    ghost.scale.setScalar(1 + Math.sin(time * 3.2) * 0.02);
+
+    gapLight.intensity = ghostOn * 6 + pulse * 14 + lock * 4 + impulse * 12;
+    gapLight.position.y = left.position.y;
+    bloom.strength = 0.32 + pulse * 0.55 + ghostOn * 0.2 + impulse * 0.5;
+
+    const gather = smooth(0.15, 0.55, p);
+    const burst = smooth(0.76, 0.98, p);
+    sparkMat.opacity = smooth(0.12, 0.26, p) * (1 - smooth(0.84, 0.98, p)) * 0.95;
+    for (let k = 0; k < SPARKS; k++) {
+      const s = sparkDir[k];
+      const r = lerp(7, s.orbit, gather) + burst * 7 * s.speed;
+      const a = time * s.speed * 0.8 + s.phase;
+      tmp.copy(s.v).multiplyScalar(r);
+      tmp.x += Math.cos(a) * 0.15;
+      tmp.y += Math.sin(a) * 0.15 + left.position.y;
+      sparkPos[k * 3] = tmp.x;
+      sparkPos[k * 3 + 1] = tmp.y;
+      sparkPos[k * 3 + 2] = tmp.z;
+    }
+    sparkGeo.attributes.position.needsUpdate = true;
+
+    dust.rotation.y = time * 0.01;
+    dust.position.y = Math.sin(time * 0.2) * 0.2;
+
+    // drag with inertia, springs back to rest
+    if (!drag.on) {
+      drag.rotY += drag.vY; drag.rotX += drag.vX;
+      drag.vY *= 0.9; drag.vX *= 0.9;
+      drag.rotY *= 0.965; drag.rotX *= 0.94;
+    }
+    drag.rotX = Math.max(-0.5, Math.min(0.5, drag.rotX));
+    root.rotation.y = (reducedMotion ? 0 : Math.sin(time * 0.3) * 0.04) + drag.rotY;
+    root.rotation.x = drag.rotX;
+    if (!reducedMotion) root.position.y = Math.sin(time * 0.8) * 0.05;
+
+    camPath.getPointAt(clamp01(p), tmp);
+    camera.position.set(tmp.x + mx * 0.6, tmp.y + my * 0.4, tmp.z).multiplyScalar(distScale);
+    look.set(0, yShift, 0);
+    camera.lookAt(look);
+
+    composer.render();
+  }
+
+  function loop() {
+    if (active) update();
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+
+  return {
+    state,
+    setActive(v) { active = v; },
+    resize,
+  };
+}
+return createChainScene;
+})();
+
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const html = document.documentElement;
+const body = document.body;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const canHover = window.matchMedia('(hover: hover)').matches;
+
+// =========================================================
+// Hero: the chain completes itself once, on load
+// =========================================================
+const hero = $('.hero');
+const header = $('.site-header');
+const canvas = $('#chain-canvas');
+let chain = null;
+try {
+  chain = createChainScene(canvas, { reducedMotion });
+} catch (err) {
+  console.warn('WebGL unavailable, showing the static logo', err);
+  canvas.hidden = true;
+  $('.hero-fallback').classList.add('is-on');
+}
+
+function stage(n) { hero.classList.add(`s${n}`); }
+
+if (reducedMotion || !window.gsap) {
+  ['s1', 's2', 's3'].forEach((c) => hero.classList.add(c));
+  header.classList.add('is-ready');
+  if (chain) { chain.state.intro = 1; chain.state.progress = 1; }
+} else {
+  const { gsap } = window;
+  const tl = gsap.timeline({ delay: 0.2 });
+  // 1. the two chains slide in from the sides, a gap between them
+  if (chain) tl.to(chain.state, { intro: 1, duration: 2, ease: 'power3.out' }, 0);
+  // 2. the headline and the header arrive while they settle
+  tl.add(() => stage(1), 0.45)
+    .add(() => header.classList.add('is-ready'), 0.8)
+    .add(() => stage(2), 1.2);
+  // 3. the magenta link flies in and locks; the answer line lands with it
+  if (chain) {
+    tl.to(chain.state, {
+      progress: 1, duration: 3.4, ease: 'power1.inOut',
+      onUpdate() { if (chain.state.progress > 0.8) stage(3); },
+    }, 0.7);
+  } else tl.add(() => stage(3), 2.6);
+}
+
+// hint that follows the cursor over the chain, and a little parallax
+if (chain) {
+  const chip = $('.cursor-chip');
+  canvas.addEventListener('chainhover', (e) => {
+    chip.textContent = e.detail === 'key' ? 'Click to pulse the link' : 'Drag to turn';
+    chip.classList.toggle('is-on', Boolean(e.detail));
+    chip.classList.toggle('is-key', e.detail === 'key');
+  });
+  hero.addEventListener('pointermove', (e) => {
+    const r = hero.getBoundingClientRect();
+    chip.style.transform = `translate(${e.clientX - r.left + 18}px, ${e.clientY - r.top + 18}px)`;
+    chain.state.mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    chain.state.mouseY = (e.clientY / window.innerHeight - 0.5) * -2;
+  });
+  hero.addEventListener('pointerleave', () => chip.classList.remove('is-on'));
+}
+
+// the header sits on the night hero, then turns to paper once the hero has scrolled away;
+// the 3D only renders while the hero is on screen
+new IntersectionObserver(([en]) => {
+  header.dataset.tone = en.isIntersecting ? 'night' : 'paper';
+}, { rootMargin: '-72px 0px 0px 0px', threshold: 0 }).observe(hero);
+if (chain) new IntersectionObserver(([en]) => chain.setActive(en.isIntersecting)).observe(hero);
+
+// =========================================================
+// Reveal once, from a visible default; siblings follow one another
+// =========================================================
+const revealIO = new IntersectionObserver((entries) => {
+  entries.forEach((en) => {
+    if (!en.isIntersecting) return;
+    en.target.classList.add('is-seen');
+    revealIO.unobserve(en.target);
+  });
+}, { rootMargin: '0px 0px -12% 0px' });
+$$('[data-reveal]').forEach((el) => {
+  const sibs = [...el.parentElement.children].filter((c) => c.hasAttribute('data-reveal'));
+  el.style.setProperty('--d', `${Math.min(sibs.indexOf(el), 4) * 0.08}s`);
+  revealIO.observe(el);
+});
+
+// the three strengths link up, one after another, when the band comes into view
+const strengths = $('.strengths');
+new IntersectionObserver(([en], io) => {
+  if (!en.isIntersecting) return;
+  io.disconnect();
+  [1, 2, 3].forEach((i) => setTimeout(() => strengths.classList.add(`lit-${i}`), 250 + i * 320));
+  setTimeout(() => strengths.classList.remove('lit-1', 'lit-2', 'lit-3'), 2800);
+}, { threshold: 0.35 }).observe(strengths);
+
+// =========================================================
+// Work: a preview of the project follows the cursor
+// =========================================================
+const preview = $('.project-preview');
+if (canHover && preview) {
+  $$('.project').forEach((p) => {
+    const tone = ['tone-1', 'tone-2', 'tone-3'].find((t) => p.classList.contains(t));
+    p.addEventListener('pointerenter', () => {
+      preview.classList.remove('tone-1', 'tone-2', 'tone-3');
+      preview.classList.add(tone, 'is-on');
+    });
+    p.addEventListener('pointerleave', () => preview.classList.remove('is-on'));
+    p.addEventListener('pointermove', (e) => {
+      const x = Math.min(e.clientX + 28, window.innerWidth - 320);
+      const y = Math.max(16, Math.min(e.clientY - 90, window.innerHeight - 200));
+      preview.style.setProperty('--px', `${x}px`);
+      preview.style.setProperty('--py', `${y}px`);
+    });
+  });
+}
+
+// =========================================================
+// Current section in the nav
+// =========================================================
+const navLinks = $$('[data-nav]');
+const navIO = new IntersectionObserver((entries) => {
+  entries.forEach((en) => {
+    const link = navLinks.find((l) => l.getAttribute('href') === `#${en.target.id}`);
+    if (!link) return;
+    link.classList.toggle('is-current', en.isIntersecting);
+    if (en.isIntersecting) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current');
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+['services', 'work', 'approach', 'team'].forEach((id) => navIO.observe($(`#${id}`)));
+
+// =========================================================
+// Links: a service row picks the form's topic; the menu closes on navigation
+// =========================================================
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  if (a.dataset.need) $('#f-need').value = a.dataset.need;
+  closeMenu();
+  if (a.getAttribute('href') === '#diagnostic') setTimeout(() => $('#f-name').focus({ preventScroll: true }), 900);
+});
+
+const burger = $('.burger');
+const menu = $('#menu');
+function closeMenu() {
+  if (!body.classList.contains('menu-open')) return;
+  body.classList.remove('menu-open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-label', 'Open menu');
+  menu.setAttribute('aria-hidden', 'true');
+}
+burger.addEventListener('click', () => {
+  if (body.classList.contains('menu-open')) return closeMenu();
+  body.classList.add('menu-open');
+  burger.setAttribute('aria-expanded', 'true');
+  burger.setAttribute('aria-label', 'Close menu');
+  menu.setAttribute('aria-hidden', 'false');
+});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+// =========================================================
+// Questions: one answer open at a time
+// =========================================================
+const items = $$('.qa');
+items.forEach((qa) => qa.querySelector('.q').addEventListener('click', () => {
+  const open = !qa.classList.contains('is-open');
+  items.forEach((o) => { o.classList.remove('is-open'); o.querySelector('.q').setAttribute('aria-expanded', 'false'); });
+  qa.classList.toggle('is-open', open);
+  qa.querySelector('.q').setAttribute('aria-expanded', String(open));
+}));
+
+// =========================================================
+// Diagnostic: the form builds the link
+// =========================================================
+const form = $('.diag-form');
+const builder = $('.builder');
+const status = $('.builder-status');
+const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+function updateBuilder() {
+  if (builder.classList.contains('has-bar')) return;
+  const name = $('#f-name').value.trim();
+  const email = $('#f-email').value.trim();
+  const org = $('#f-org').value.trim();
+  builder.classList.toggle('has-left', Boolean(name));
+  builder.classList.toggle('has-right', emailOk(email));
+  builder.classList.toggle('has-gap', Boolean(name && emailOk(email) && org));
+  const done = [Boolean(name), emailOk(email), Boolean(org)].filter(Boolean).length;
+  status.textContent = done === 3 ? 'One link missing. Send the request to complete it.' : `${done} of 3 details in. Fill in the form to complete the link.`;
+}
+function setError(input, msg) {
+  const field = input.closest('.field');
+  field.classList.toggle('has-error', Boolean(msg));
+  field.querySelector('.field-error').textContent = msg || '';
+  input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+}
+function validate(input) {
+  const v = input.value.trim();
+  if (input.required && !v) return setError(input, `Please add your ${input.labels[0].textContent.toLowerCase()}.`), false;
+  if (input.type === 'email' && !emailOk(v)) return setError(input, 'Please enter a valid email, like name@company.com.'), false;
+  setError(input, '');
+  return true;
+}
+$$('input', form).forEach((i) => {
+  i.addEventListener('input', () => { updateBuilder(); if (i.getAttribute('aria-invalid') === 'true') validate(i); });
+  i.addEventListener('blur', () => i.value && validate(i));
+});
+updateBuilder();
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const inputs = $$('input', form);
+  const ok = inputs.map(validate).every(Boolean);
+  if (!ok) { inputs.find((i) => i.getAttribute('aria-invalid') === 'true').focus(); return; }
+  builder.classList.remove('has-gap');
+  builder.classList.add('has-bar');
+  status.textContent = 'Link complete. Opening your email app.';
+  const d = Object.fromEntries(new FormData(form));
+  const bodyText = `Name: ${d.name}\nWork email: ${d.email}\nOrganisation: ${d.org}\nNeeds help with: ${d.need}`;
+  const success = $('.form-success', form);
+  success.hidden = false;
+  success.textContent = `Thanks, ${d.name.split(' ')[0]}. Your email app is opening with the request addressed to hello@mlinkm.com.`;
+  setTimeout(() => {
+    window.location.href = `mailto:hello@mlinkm.com?subject=${encodeURIComponent('Diagnostic request from ' + d.org)}&body=${encodeURIComponent(bodyText)}`;
+  }, 900);
+});
+
+</script>
+</body>
+</html>

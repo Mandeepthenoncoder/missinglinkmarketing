@@ -477,6 +477,38 @@ html:not(.js) .builder-status { display: none; }
 .footer .ph { color: var(--on-night-soft); border-color: var(--night-line); }
 .footer-legal { font-size: var(--text-sm); }
 
+/* ---------- phones: tighter rhythm, compact cards, finger-sized targets ---------- */
+@media (max-width: 39.99rem) {
+  :root { --section: 72px; --space-2xl: 48px; --space-xl: 32px; --header-h: 64px; }
+  .hero-inner { padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px)); gap: var(--space-lg); }
+  .hero-actions .btn { flex: 1 1 100%; }
+  .service-link { padding-block: 22px; }
+  .project { padding-block: 22px; }
+  .project-art { aspect-ratio: 5 / 2; }
+  .work-next .btn { justify-self: stretch; }
+  .team-grid { gap: 0; border-top: 1px solid var(--line); }
+  .person { grid-template-columns: 76px minmax(0, 1fr); column-gap: var(--space-md); row-gap: 2px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+  .portrait { grid-row: span 3; align-self: start; aspect-ratio: 1; margin-bottom: 0; border-radius: 14px; }
+  .portrait span { font-size: 1.5rem; }
+  .person-role { margin-bottom: 6px; }
+  .q { padding-block: 18px; font-size: 1.0625rem; }
+  .diag-form { padding: 20px; }
+  .diag-form .btn { width: 100%; }
+}
+/* touch screens have no hover, so the work cards link up as they scroll into view */
+@media (hover: none) {
+  .project.is-seen .project-art span:nth-child(1) { transform: translate(12%, -50%); opacity: .9; transition-delay: .25s; }
+  .project.is-seen .project-art span:nth-child(3) { transform: translate(-12%, -50%); opacity: .9; transition-delay: .25s; }
+  .project.is-seen .project-art span:nth-child(2) { opacity: 1; transform: translate(0, -50%); transition-delay: .7s; }
+}
+@media (pointer: coarse) {
+  .brand { min-height: 44px; }
+  .footer-links { gap: 0 24px; }
+  .footer-links a, .footer-links .ph { display: inline-flex; align-items: center; min-height: 44px; }
+  .form-note a { display: inline-block; padding-block: 12px; margin-block: -12px; }
+  .service-go { padding-block: 10px; margin-block: -10px; }
+}
+
 /* ---------- reveal (once, from a visible default) ---------- */
 .js:not(.static) [data-reveal]:not(.is-seen) { opacity: 0; transform: translateY(20px); }
 .js:not(.static) [data-reveal] { transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out); transition-delay: var(--d, 0s); }
@@ -916,9 +948,10 @@ function dotTexture() {
 }
 
 function createChainScene(canvas, { reducedMotion = false } = {}) {
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
   const small = Math.min(window.innerWidth, window.innerHeight) < 700; // phones: lighter render
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small ? 1.5 : 1.75));
+  // the bloom composer renders off screen, so canvas antialiasing only costs memory on phones
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: !small, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small ? 1.25 : 1.75));
   // EffectComposer + OutputPass encode the clear colour twice and ACES darkens it.
   // These linear values are calibrated so the canvas reads exactly #0B0E1A on screen.
   renderer.setClearColor(CLEAR, 1);
@@ -946,7 +979,7 @@ function createChainScene(canvas, { reducedMotion = false } = {}) {
 
   // ---------- chain ----------
   const curve = new StadiumCurve(0.8, 0.5);
-  const linkGeo = new THREE.TubeGeometry(curve, 180, 0.15, 24, true);
+  const linkGeo = new THREE.TubeGeometry(curve, small ? 120 : 180, 0.15, small ? 16 : 24, true);
   const ghostGeo = new THREE.TubeGeometry(curve, 120, 0.028, 8, true);
 
   const root = new THREE.Group();
@@ -1135,9 +1168,13 @@ function createChainScene(canvas, { reducedMotion = false } = {}) {
     }
   }
 
+  let lastW = 0, lastH = 0;
   function resize() {
     const w = canvas.clientWidth || window.innerWidth;
     const h = canvas.clientHeight || window.innerHeight;
+    // phones fire resize as the address bar slides; the hero keeps its size, so skip reallocating
+    if (w === lastW && h === lastH) return;
+    lastW = w; lastH = h;
     renderer.setSize(w, h, false);
     composer.setSize(w, h);
     bloom.setSize(w, h);

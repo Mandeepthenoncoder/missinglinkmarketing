@@ -66,9 +66,10 @@ function dotTexture() {
 }
 
 export function createChainScene(canvas, { reducedMotion = false } = {}) {
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
   const small = Math.min(window.innerWidth, window.innerHeight) < 700; // phones: lighter render
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small ? 1.5 : 1.75));
+  // the bloom composer renders off screen, so canvas antialiasing only costs memory on phones
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: !small, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small ? 1.25 : 1.75));
   // EffectComposer + OutputPass encode the clear colour twice and ACES darkens it.
   // These linear values are calibrated so the canvas reads exactly #0B0E1A on screen.
   renderer.setClearColor(CLEAR, 1);
@@ -96,7 +97,7 @@ export function createChainScene(canvas, { reducedMotion = false } = {}) {
 
   // ---------- chain ----------
   const curve = new StadiumCurve(0.8, 0.5);
-  const linkGeo = new THREE.TubeGeometry(curve, 180, 0.15, 24, true);
+  const linkGeo = new THREE.TubeGeometry(curve, small ? 120 : 180, 0.15, small ? 16 : 24, true);
   const ghostGeo = new THREE.TubeGeometry(curve, 120, 0.028, 8, true);
 
   const root = new THREE.Group();
@@ -285,9 +286,13 @@ export function createChainScene(canvas, { reducedMotion = false } = {}) {
     }
   }
 
+  let lastW = 0, lastH = 0;
   function resize() {
     const w = canvas.clientWidth || window.innerWidth;
     const h = canvas.clientHeight || window.innerHeight;
+    // phones fire resize as the address bar slides; the hero keeps its size, so skip reallocating
+    if (w === lastW && h === lastH) return;
+    lastW = w; lastH = h;
     renderer.setSize(w, h, false);
     composer.setSize(w, h);
     bloom.setSize(w, h);

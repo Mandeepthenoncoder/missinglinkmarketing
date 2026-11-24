@@ -1,9 +1,9 @@
 {
   "name": "Missing Link",
   "short_name": "Missing Link",
-  "start_url": "/",
+  "start_url": "./",
   "display": "browser",
-  "background_color": "#0B0E1A",
-  "theme_color": "#0B0E1A",
+  "background_color": "#13142B",
+  "theme_color": "#13142B",
   "icons": [{ "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
 }

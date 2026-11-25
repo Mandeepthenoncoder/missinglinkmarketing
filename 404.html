@@ -19,9 +19,7 @@
   }
   html, body { overflow-x: clip; }
   body { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 24px; background: var(--bg); color: var(--text); font-family: var(--font-body); text-align: center; }
-  svg { width: 160px; height: 80px; }
-  svg path { fill: none; stroke: var(--white); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
-  svg .gap { stroke: var(--line); stroke-dasharray: 2 4; }
+  svg { width: 180px; height: 90px; }
   h1 { margin: 32px 0 12px; font-size: 2.25rem; line-height: 2.5rem; font-weight: 600; letter-spacing: -0.03em; }
   p { margin: 0 0 32px; color: var(--muted); }
   a { display: inline-flex; min-height: 48px; align-items: center; padding: 8px 24px; border-radius: 999px; background: var(--cta); color: var(--white); font-weight: 600; text-decoration: none; }
@@ -30,11 +28,7 @@
 </head>
 <body>
 <main>
-  <svg viewBox="0 0 100 50" aria-hidden="true">
-    <path d="M37 17 L27 7 Q25 5 23 7 L7 23 Q5 25 7 27 L23 43 Q25 45 27 43 L37 33"/>
-    <path d="M63 33 L73 43 Q75 45 77 43 L93 27 Q95 25 93 23 L77 7 Q75 5 73 7 L63 17"/>
-    <path class="gap" d="M42 32 L58 18"/>
-  </svg>
+  <svg viewBox="0 0 100 50" aria-hidden="true"><defs><linearGradient id="mlg-l" gradientUnits="userSpaceOnUse" x1="10" y1="6" x2="34" y2="44"><stop offset="0" stop-color="#14F1F2"/><stop offset=".55" stop-color="#0A63FF"/><stop offset="1" stop-color="#0634C4"/></linearGradient><linearGradient id="mlg-r" gradientUnits="userSpaceOnUse" x1="90" y1="6" x2="66" y2="44"><stop offset="0" stop-color="#FF55E6"/><stop offset=".5" stop-color="#9A14E6"/><stop offset="1" stop-color="#5208CC"/></linearGradient><linearGradient id="mlg-s" gradientUnits="userSpaceOnUse" x1="38" y1="14" x2="62" y2="36"><stop offset="0" stop-color="#14F1F2"/><stop offset=".5" stop-color="#3A2BFF"/><stop offset="1" stop-color="#FF3FE0"/></linearGradient></defs><path d="M36.5 15.5 L29 8 Q25 4 21 8 L8 21 Q4 25 8 29 L21 42 Q25 46 29 42 L36.5 34.5" fill="none" stroke="url(#mlg-l)" stroke-width="9.5" stroke-linejoin="round"/><path d="M63.5 34.5 L71 42 Q75 46 79 42 L92 29 Q96 25 92 21 L79 8 Q75 4 71 8 L63.5 15.5" fill="none" stroke="url(#mlg-r)" stroke-width="9.5" stroke-linejoin="round"/><g fill="none" stroke="#4A4E7A" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="1 2.4"><path d="M38.25 30.35 L43.35 36.05"/><path d="M41.93 27.07 L47.03 32.77"/><path d="M45.61 23.79 L50.71 29.49"/><path d="M49.29 20.51 L54.39 26.21"/><path d="M52.97 17.23 L58.07 22.93"/><path d="M56.65 13.95 L61.75 19.65"/></g></svg>
   <h1>This link is missing.</h1>
   <p>The page you were looking for isn’t here.</p>
   <a href="/missinglinkmarketing/">Back to Missing Link</a>

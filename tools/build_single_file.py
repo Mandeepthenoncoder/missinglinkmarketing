@@ -32,7 +32,7 @@ swap('href="assets/favicon.svg"', 'href="data:image/svg+xml;base64,' + fav + '"'
 swap('<link rel="manifest" href="site.webmanifest">\n', '')
 swap('<script type="module" src="js/main.js"></script>', '<script type="module">\n' + bundle + '\n</script>')
 # images become data URIs; the film is too heavy, so it streams from the live site
-LIVE = 'https://mandeepthenoncoder.github.io/missinglinkmarketing/'
+LIVE = 'https://mlinkm.com/'
 mimetypes.add_type('image/webp', '.webp')
 def inline(m):
     path = m.group(1)

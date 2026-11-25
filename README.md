@@ -23,6 +23,6 @@ python3 tools/build_single_file.py
 
 ## Before launch
 
-- Add a portrait for Somaak Dutta, and logo files for Eiliant Advisors, IMRT and Intelligroup (shown as names for now).
+- Add logo files for Eiliant Advisors, IMRT and Intelligroup (shown as names for now).
 - Confirm the domain (`https://mlinkm.com/` is used in the canonical link, social tags, sitemap and robots).
 - The diagnostic form opens the visitor's email app; connect a form service to receive submissions directly.

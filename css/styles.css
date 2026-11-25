@@ -459,9 +459,6 @@ html:not(.js) .builder-status { display: none; }
 .footer-mast:hover span { color: var(--on-night); }
 .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-lg); align-items: center; }
 .footer .brand { color: var(--on-night); }
-.footer-links { display: flex; flex-wrap: wrap; gap: 8px 28px; }
-.footer-links a { text-decoration: none; }
-.footer-links a:hover { color: var(--on-night); text-decoration: underline; }
 .footer .ph { color: var(--on-night-soft); border-color: var(--night-line); }
 .footer-legal { font-size: var(--text-sm); }
 
@@ -483,8 +480,6 @@ html:not(.js) .builder-status { display: none; }
 }
 @media (pointer: coarse) {
   .brand { min-height: 44px; }
-  .footer-links { gap: 0 24px; }
-  .footer-links a, .footer-links .ph { display: inline-flex; align-items: center; min-height: 44px; }
   .form-note a { display: inline-block; padding-block: 12px; margin-block: -12px; }
   .service-go { padding-block: 10px; margin-block: -10px; }
 }

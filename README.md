@@ -23,6 +23,6 @@ python3 tools/build_single_file.py
 
 ## Before launch
 
-- Replace the placeholders: `[X]` engagements, `[Verified outcome]`, `[Technology client]`, `[LinkedIn URL]`, team portraits.
+- Replace the placeholders: `[X]` engagements, `[Verified outcome]`, `[Technology client]`, team portraits.
 - Confirm the domain (`https://mlinkm.com/` is used in the canonical link, social tags, sitemap and robots).
 - The diagnostic form opens the visitor's email app; connect a form service to receive submissions directly.

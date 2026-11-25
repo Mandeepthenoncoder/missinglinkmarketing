@@ -96,27 +96,6 @@ new IntersectionObserver(([en], io) => {
 }, { threshold: 0.35 }).observe(strengths);
 
 // =========================================================
-// Work: a preview of the project follows the cursor
-// =========================================================
-const preview = $('.project-preview');
-if (canHover && preview) {
-  $$('.project').forEach((p) => {
-    const tone = ['tone-1', 'tone-2', 'tone-3'].find((t) => p.classList.contains(t));
-    p.addEventListener('pointerenter', () => {
-      preview.classList.remove('tone-1', 'tone-2', 'tone-3');
-      preview.classList.add(tone, 'is-on');
-    });
-    p.addEventListener('pointerleave', () => preview.classList.remove('is-on'));
-    p.addEventListener('pointermove', (e) => {
-      const x = Math.min(e.clientX + 28, window.innerWidth - 320);
-      const y = Math.max(16, Math.min(e.clientY - 90, window.innerHeight - 200));
-      preview.style.setProperty('--px', `${x}px`);
-      preview.style.setProperty('--py', `${y}px`);
-    });
-  });
-}
-
-// =========================================================
 // Current section in the nav
 // =========================================================
 const navLinks = $$('[data-nav]');

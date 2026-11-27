@@ -1,5 +1,5 @@
 /* Hallmark · v2.0.0 · redesign: full · built: the project · genre: editorial · theme: brand (Bridge logo sheet, sampled) · deal: manual · hero: Poster · nav: edge-aligned bar · footer: mast */
-/* critique: a website, not a slideshow. One orchestrated moment (the chain completes on load), then calm paper sections with one magenta accent, hairlines and big type. */
+/* critique: a website, not a slideshow. One orchestrated moment (the pit stop film on load), then calm paper sections with one magenta accent, hairlines and big type. */
 /* waive 38iii: the hero's second line is set in the brand magenta because it is the missing link, the one moment the accent earns. */
 
 /* ---------- tokens ---------- */
@@ -187,16 +187,25 @@ img, svg { max-width: 100%; }
   min-height: max(640px, 100svh); background: var(--night); color: var(--on-night);
   display: flex;
 }
-#chain-canvas { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: pan-y; }
-#chain-canvas.is-dragging { cursor: grabbing; }
-.hero::after { /* keeps the text legible where it meets the chain */
-  content: ""; position: absolute; inset: auto 0 0; height: 58%; z-index: 1; pointer-events: none;
-  background: linear-gradient(to top, var(--night) 22%, transparent);
+#pit-canvas { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; display: block; touch-action: pan-y; }
+.hero::before { /* a light top scrim so the header reads over the pit lights */
+  content: ""; position: absolute; inset: 0 0 auto; height: 26%; z-index: 1; pointer-events: none;
+  background: linear-gradient(to bottom, rgb(19 20 43 / .65), transparent);
+}
+.hero::after { /* keeps the text legible over the scene */
+  content: ""; position: absolute; inset: auto 0 0; height: 56%; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, var(--night) 16%, rgb(19 20 43 / .5) 55%, transparent);
 }
 .hero-fallback { position: absolute; inset: 0 0 45%; z-index: 0; display: grid; place-items: center; }
 .hero-fallback svg { width: min(56vw, 360px); }
 .js .hero-fallback { display: none; }
 .js .hero-fallback.is-on { display: grid; }
+.hero-replay {
+  position: absolute; z-index: 3; right: max(16px, env(safe-area-inset-right, 0px)); top: calc(var(--header-h) + 16px);
+  padding: 6px 14px; border-radius: 999px; border: 1px solid var(--night-line); background: var(--scrim-night);
+  color: var(--on-night); font: inherit; font-size: .8125rem; font-weight: 600; cursor: pointer;
+}
+.hero-replay:hover { border-color: var(--on-night-soft); }
 .hero-inner {
   position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-xl);
   padding-top: calc(var(--header-h) + 40px); padding-bottom: clamp(40px, 7vh, 88px); pointer-events: none;
@@ -220,15 +229,7 @@ img, svg { max-width: 100%; }
 @media (min-width: 60rem) {
   .hero-foot { grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: var(--space-2xl); }
 }
-.cursor-chip {
-  position: absolute; left: 0; top: 0; z-index: 3; pointer-events: none;
-  padding: 4px 10px; border-radius: 999px; background: var(--scrim-night); border: 1px solid var(--night-line);
-  font-size: .75rem; font-weight: 600; color: var(--on-night); white-space: nowrap; opacity: 0; transition: opacity .2s;
-}
-.cursor-chip.is-on { opacity: 1; }
-.cursor-chip.is-key { color: var(--accent-light); }
-
-/* load sequence (only with scripting and motion): the header and copy arrive with the chain */
+/* load sequence (only with scripting and motion): the header and copy arrive with the film */
 .js:not(.static) .site-header:not(.is-ready) { opacity: 0; transform: translateY(-12px); }
 .js:not(.static) .hero .ln, .js:not(.static) .hero-foot { transition: clip-path 1.1s var(--ease-out), opacity .9s var(--ease-out), transform .9s var(--ease-out); }
 .hero .ln { clip-path: inset(0 0 0 0); padding-bottom: .14em; margin-bottom: -.14em; } /* room for descenders inside the wipe */

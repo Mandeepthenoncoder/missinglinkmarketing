@@ -81,14 +81,13 @@
 
 <main id="main">
 
-  <!-- Hero: a 3D pit stop plays once, on load. One wheel is missing, we fit it, the car races off
-       and the camera rises over a circuit laid out in the shape of the logo, drawn by the car's light trail. -->
+  <!-- Hero: the chain plays its story once, on load -->
   <section class="hero" id="top" aria-labelledby="hero-title">
-    <canvas id="pit-canvas" aria-label="A race car waits in its pit box with one wheel missing. The glowing missing wheel locks on, the car lights up and races away, and from above its light trail draws the Missing Link logo." role="img"></canvas>
+    <canvas id="chain-canvas" aria-label="A 3D chain. The missing link drops into place, linking strategy, brand and growth. Drag to turn it." role="img"></canvas>
     <div class="hero-fallback" aria-hidden="true">
       <svg viewBox="0 0 100 50"><use href="#ml-mark"/></svg>
     </div>
-    <button class="hero-replay" type="button" hidden>Replay</button>
+    <div class="cursor-chip" aria-hidden="true"></div>
     <div class="container hero-inner">
       <h1 class="hero-title" id="hero-title">
         <span class="ln">Strategy. Brand. Growth.</span>
@@ -409,6 +408,7 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script type="module" src="js/main.js"></script>
 </body>
 </html>

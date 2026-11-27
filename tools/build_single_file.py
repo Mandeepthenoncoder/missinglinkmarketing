@@ -1,7 +1,7 @@
 """Bundle the site into one shareable HTML file: dist/missing-link.html
 
 Run from anywhere:  python3 tools/build_single_file.py
-Inlines css/styles.css, js/pitstop.js + js/main.js, the favicon and every image in assets/. Three.js,
+Inlines css/styles.css, js/scene.js + js/main.js, the favicon and every image in assets/. Three.js, GSAP,
 fonts and the showcase film still load from the web (the film from the GitHub Pages copy), so the file
 needs an internet connection when opened.
 """
@@ -9,15 +9,15 @@ import base64, mimetypes, os, re
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(root, p), encoding='utf-8').read()
-html, css, scene, main = read('index.html'), read('css/styles.css'), read('js/pitstop.js'), read('js/main.js')
+html, css, scene, main = read('index.html'), read('css/styles.css'), read('js/scene.js'), read('js/main.js')
 fav = base64.b64encode(open(os.path.join(root, 'assets/favicon.svg'), 'rb').read()).decode()
 
 lines = scene.splitlines()
 imports = [l for l in lines if l.startswith('import ')]
-body = '\n'.join(l for l in lines if not l.startswith('import ')).replace('export function createPitScene', 'function createPitScene')
+body = '\n'.join(l for l in lines if not l.startswith('import ')).replace('export function createChainScene', 'function createChainScene')
 # the scene keeps its own helpers in its own scope so they never clash with main.js
-scene_block = 'const createPitScene = (() => {\n' + body + '\nreturn createPitScene;\n})();'
-main = main.replace("import { createPitScene } from './pitstop.js';\n", '')
+scene_block = 'const createChainScene = (() => {\n' + body + '\nreturn createChainScene;\n})();'
+main = main.replace("import { createChainScene } from './scene.js';\n", '')
 bundle = '\n'.join(imports) + '\n\n' + scene_block + '\n\n' + main
 
 

@@ -1,4 +1,4 @@
-import { createPitScene } from './pitstop.js';
+import { createChainScene } from './scene.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -8,48 +8,67 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 const canHover = window.matchMedia('(hover: hover)').matches;
 
 // =========================================================
-// Hero: the pit stop plays once, on load. The copy lands on the story's beats:
-// the problem while the car waits, "Linked." as the missing wheel locks on.
+// Hero: the chain completes itself once, on load
 // =========================================================
 const hero = $('.hero');
 const header = $('.site-header');
-const canvas = $('#pit-canvas');
-const replay = $('.hero-replay');
-const stage = (n) => hero.classList.add(`s${n}`);
-const beats = {
-  title: () => stage(1),
-  header: () => header.classList.add('is-ready'),
-  lead: () => stage(2),
-  lock: () => stage(3),
-  end: () => { replay.hidden = false; },
-};
-let pit = null;
+const canvas = $('#chain-canvas');
+let chain = null;
 try {
-  pit = createPitScene(canvas, { reducedMotion, onBeat: (name) => beats[name] && beats[name]() });
+  chain = createChainScene(canvas, { reducedMotion });
 } catch (err) {
   console.warn('WebGL unavailable, showing the static logo', err);
   canvas.hidden = true;
   $('.hero-fallback').classList.add('is-on');
 }
-if (!pit || reducedMotion) {
+
+function stage(n) { hero.classList.add(`s${n}`); }
+
+if (reducedMotion || !window.gsap) {
   ['s1', 's2', 's3'].forEach((c) => hero.classList.add(c));
   header.classList.add('is-ready');
-}
-if (pit) {
-  if (location.search.includes('debug')) window.pit = pit;
-  replay.addEventListener('click', () => { replay.hidden = true; pit.replay(); });
-  hero.addEventListener('pointermove', (e) => {
-    pit.state.mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-    pit.state.mouseY = (e.clientY / window.innerHeight - 0.5) * -2;
-  });
-  // the 3D only renders while the hero is on screen
-  new IntersectionObserver(([en]) => pit.setActive(en.isIntersecting)).observe(hero);
+  if (chain) { chain.state.intro = 1; chain.state.progress = 1; }
+} else {
+  const { gsap } = window;
+  const tl = gsap.timeline({ delay: 0.2 });
+  // 1. the two chains slide in from the sides, a gap between them
+  if (chain) tl.to(chain.state, { intro: 1, duration: 2, ease: 'power3.out' }, 0);
+  // 2. the headline and the header arrive while they settle
+  tl.add(() => stage(1), 0.45)
+    .add(() => header.classList.add('is-ready'), 0.8)
+    .add(() => stage(2), 1.2);
+  // 3. the magenta link flies in and locks; the answer line lands with it
+  if (chain) {
+    tl.to(chain.state, {
+      progress: 1, duration: 3.4, ease: 'power1.inOut',
+      onUpdate() { if (chain.state.progress > 0.8) stage(3); },
+    }, 0.7);
+  } else tl.add(() => stage(3), 2.6);
 }
 
-// the header sits on the night hero, then turns to paper once the hero has scrolled away
+// hint that follows the cursor over the chain, and a little parallax
+if (chain) {
+  const chip = $('.cursor-chip');
+  canvas.addEventListener('chainhover', (e) => {
+    chip.textContent = e.detail === 'key' ? 'Click to pulse the link' : 'Drag to turn';
+    chip.classList.toggle('is-on', Boolean(e.detail));
+    chip.classList.toggle('is-key', e.detail === 'key');
+  });
+  hero.addEventListener('pointermove', (e) => {
+    const r = hero.getBoundingClientRect();
+    chip.style.transform = `translate(${e.clientX - r.left + 18}px, ${e.clientY - r.top + 18}px)`;
+    chain.state.mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    chain.state.mouseY = (e.clientY / window.innerHeight - 0.5) * -2;
+  });
+  hero.addEventListener('pointerleave', () => chip.classList.remove('is-on'));
+}
+
+// the header sits on the night hero, then turns to paper once the hero has scrolled away;
+// the 3D only renders while the hero is on screen
 new IntersectionObserver(([en]) => {
   header.dataset.tone = en.isIntersecting ? 'night' : 'paper';
 }, { rootMargin: '-72px 0px 0px 0px', threshold: 0 }).observe(hero);
+if (chain) new IntersectionObserver(([en]) => chain.setActive(en.isIntersecting)).observe(hero);
 
 // =========================================================
 // Reveal once, from a visible default; siblings follow one another

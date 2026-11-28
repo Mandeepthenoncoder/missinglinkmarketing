@@ -1,28 +1,17 @@
 """Bundle the site into one shareable HTML file: dist/missing-link.html
 
 Run from anywhere:  python3 tools/build_single_file.py
-Inlines css/styles.css, js/pitstop.js + js/main.js, the favicon and every image in assets/. Three.js,
-fonts, the 3D car and crew and the showcase film still load from the web (the film from the GitHub Pages copy), so the file
-needs an internet connection when opened.
+Inlines css/styles.css, js/main.js, the favicon and every image in assets/. Fonts and the films (the hero
+pit stop and the showcase film) still load from the live site, so the file needs an internet connection when opened.
 """
 import base64, mimetypes, os, re
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(root, p), encoding='utf-8').read()
-html, css, scene, main = read('index.html'), read('css/styles.css'), read('js/pitstop.js'), read('js/main.js')
+html, css, main = read('index.html'), read('css/styles.css'), read('js/main.js')
 fav = base64.b64encode(open(os.path.join(root, 'assets/favicon.svg'), 'rb').read()).decode()
-
-lines = scene.splitlines()
-imports = [l for l in lines if l.startswith('import ')]
-body = '\n'.join(l for l in lines if not l.startswith('import ')).replace('export function createPitScene', 'function createPitScene')
-# the 3D models load from the live site
-body = body.replace("new URL('../assets/3d/', import.meta.url)", "new URL('https://mlinkm.com/assets/3d/')")
-assert 'import.meta.url' not in body
-# the scene keeps its own helpers in its own scope so they never clash with main.js
-scene_block = 'const createPitScene = (() => {\n' + body + '\nreturn createPitScene;\n})();'
-main = main.replace("import { createPitScene } from './pitstop.js';\n", '')
-bundle = '\n'.join(imports) + '\n\n' + scene_block + '\n\n' + main
-
+# the hero picks its film in script; point it at the live site
+main = main.replace("'assets/hero/", "'https://mlinkm.com/assets/hero/")
 
 def swap(a, b):
     global html
@@ -33,7 +22,7 @@ def swap(a, b):
 swap('<link rel="stylesheet" href="css/styles.css">', '<style>\n' + css + '\n</style>')
 swap('href="assets/favicon.svg"', 'href="data:image/svg+xml;base64,' + fav + '"')
 swap('<link rel="manifest" href="site.webmanifest">\n', '')
-swap('<script type="module" src="js/main.js"></script>', '<script type="module">\n' + bundle + '\n</script>')
+swap('<script src="js/main.js" defer></script>', '<script>\naddEventListener("DOMContentLoaded", () => {\n' + main + '\n});\n</script>')
 # images become data URIs; the film is too heavy, so it streams from the live site
 LIVE = 'https://mlinkm.com/'
 mimetypes.add_type('image/webp', '.webp')

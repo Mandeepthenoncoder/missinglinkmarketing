@@ -1,5 +1,3 @@
-import { createPitScene } from './pitstop.js';
-
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const html = document.documentElement;
@@ -8,51 +6,67 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 const canHover = window.matchMedia('(hover: hover)').matches;
 
 // =========================================================
-// Hero: the pit stop plays once, on load. The copy lands on the story's beats:
-// the problem while the car waits, "Linked." as the missing wheel locks on.
+// Hero: the pit stop film plays once, on load, muted (a button turns the sound on).
+// The copy lands on the film's beats:
+//   the problem while the stop runs, "Linked." as the missing wheel locks on,
+//   and the logo draws itself once the camera has risen over the circuit.
 // =========================================================
+const BEAT = { lock: 6.9, rise: 10.4 }; // seconds into the 12 s film
 const hero = $('.hero');
 const header = $('.site-header');
-const canvas = $('#pit-canvas');
+const film = $('#pit-film');
 const replay = $('.hero-replay');
+const sound = $('.hero-sound');
 const stage = (n) => hero.classList.add(`s${n}`);
-// the opening copy runs on its own clock, so it never waits for the 3D models to download
-const beats = {
-  lock: () => stage(3),
-  end: () => { replay.hidden = false; },
-};
-if (!reducedMotion) {
-  setTimeout(() => stage(1), 300);
-  setTimeout(() => header.classList.add('is-ready'), 700);
-  setTimeout(() => stage(2), 1300);
-}
-let pit = null;
-try {
-  pit = createPitScene(canvas, { reducedMotion, onBeat: (name) => beats[name] && beats[name]() });
-} catch (err) {
-  console.warn('WebGL unavailable, showing the static logo', err);
-  canvas.hidden = true;
-  $('.hero-fallback').classList.add('is-on');
-}
-if (!pit || reducedMotion) {
-  ['s1', 's2', 's3'].forEach((c) => hero.classList.add(c));
+
+function finale() {
+  hero.classList.add('s1', 's2', 's3', 'is-done');
   header.classList.add('is-ready');
 }
-if (pit) {
-  if (location.search.includes('debug')) window.pit = pit;
-  pit.ready.catch((err) => { // the models did not load: show the finished state instead
-    console.warn('3D models unavailable', err);
-    canvas.hidden = true;
-    $('.hero-fallback').classList.add('is-on');
-    ['s1', 's2', 's3'].forEach((c) => hero.classList.add(c));
+function showEnd() { // no film: the closing aerial still with the logo, everything in place
+  film.pause();
+  hero.classList.add('is-still');
+  sound.hidden = true;
+  finale();
+}
+
+if (reducedMotion) showEnd();
+else {
+  // a lighter file on small screens
+  film.src = window.matchMedia('(min-width: 48rem)').matches ? 'assets/hero/pitstop-1080.mp4' : 'assets/hero/pitstop-720.mp4';
+  const beats = [
+    [0.3, () => stage(1)], [0.7, () => header.classList.add('is-ready')], [1.3, () => stage(2)],
+    [BEAT.lock, () => stage(3)], [BEAT.rise, () => hero.classList.add('is-done')],
+  ].map(([at, fn]) => ({ at, fn, done: false }));
+  const tick = () => {
+    beats.forEach((b) => { if (!b.done && film.currentTime >= b.at) { b.done = true; b.fn(); } });
+    if (!film.paused && !film.ended) requestAnimationFrame(tick);
+  };
+  film.addEventListener('play', () => requestAnimationFrame(tick));
+  film.addEventListener('ended', () => { finale(); replay.hidden = false; sound.hidden = true; });
+  // if the browser will not autoplay (low power mode, data saver), show the finished frame instead
+  const start = film.play();
+  if (start && start.catch) start.catch(showEnd);
+  setTimeout(() => { if (film.currentTime === 0 && !film.ended) showEnd(); }, 5000);
+
+  replay.addEventListener('click', () => {
+    replay.hidden = true;
+    sound.hidden = false;
+    hero.classList.remove('is-done', 's3', 'is-still');
+    beats.forEach((b) => { b.done = b.at < BEAT.lock; });
+    film.currentTime = 0;
+    film.play();
   });
-  replay.addEventListener('click', () => { replay.hidden = true; pit.replay(); });
-  hero.addEventListener('pointermove', (e) => {
-    pit.state.mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-    pit.state.mouseY = (e.clientY / window.innerHeight - 0.5) * -2;
+  sound.addEventListener('click', () => {
+    film.muted = !film.muted;
+    sound.setAttribute('aria-pressed', String(!film.muted));
+    sound.textContent = film.muted ? 'Sound on' : 'Sound off';
   });
-  // the 3D only renders while the hero is on screen
-  new IntersectionObserver(([en]) => pit.setActive(en.isIntersecting)).observe(hero);
+  // pause off screen, carry on when it comes back
+  new IntersectionObserver(([en]) => {
+    if (!en.isIntersecting) film.pause();
+    else if (!film.ended && !hero.classList.contains('is-still') && film.currentTime > 0) film.play();
+  }).observe(hero);
 }
 
 // the header sits on the night hero, then turns to paper once the hero has scrolled away

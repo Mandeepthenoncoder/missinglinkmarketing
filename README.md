@@ -3,7 +3,7 @@
 Static site for Missing Link, integrated marketing communications, Hyderabad.
 
 - `index.html`, `css/styles.css`, `js/main.js`: the page
-- `js/pitstop.js`: the Three.js pit stop in the hero (loads Three.js from a CDN and the models in `assets/3d`). Add `?debug` to the URL and call `pit.seek(seconds)` in the console to check any moment of the story.
+- `assets/hero/`: the hero pit stop film (1080p for desktop, 720p for phones), its poster and its closing still. The film was generated with Seedance 2.5; `js/main.js` times the headline and the logo to its beats.
 - `404.html`, `robots.txt`, `sitemap.xml`, `site.webmanifest`: hosting extras
 - `dist/missing-link.html`: the whole site bundled into one file
 
@@ -14,10 +14,6 @@ python3 -m http.server 4321
 ```
 
 Then open http://localhost:4321.
-
-## 3D models
-
-`assets/3d/car.glb` and `assets/3d/crew.glb` were generated from images with Magnific, then shrunk with `tools/optimize_glb.py` (it removes the car's wheels, which the scene adds itself).
 
 ## Rebuild the single file
 

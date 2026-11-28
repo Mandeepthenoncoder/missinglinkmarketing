@@ -22,15 +22,8 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Michroma&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
-<script type="importmap">
-{ "imports": {
-  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-} }
-</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -81,14 +74,27 @@
 
 <main id="main">
 
-  <!-- Hero: a 3D pit stop plays once, on load. One wheel is missing, we fit it, the car races off
-       and the camera rises over a circuit laid out in the shape of the logo, drawn by the car's light trail. -->
+  <!-- Hero: a pit stop film plays once, on load. Every job in the stop goes right except one part, which is missing;
+       the glowing wheel locks on, the car launches, and the camera rises to the logo, which draws itself. -->
   <section class="hero" id="top" aria-labelledby="hero-title">
-    <canvas id="pit-canvas" aria-label="A race car waits in its pit box with one wheel missing. The glowing missing wheel locks on, the car lights up and races away, and from above its light trail draws the Missing Link logo." role="img"></canvas>
+    <div class="hero-film">
+      <video id="pit-film" muted playsinline preload="auto" poster="assets/hero/pit-start.webp" aria-label="A night pit stop. The crew change three wheels in perfect sync, but the front-left wheel is missing and the light stays red. A glowing wheel locks on, the car lights up and launches, and the camera rises over the circuit to the Missing Link logo."></video>
+      <img class="hero-still" src="assets/hero/pit-end.webp" alt="" width="1600" height="900" decoding="async">
+    </div>
     <div class="hero-fallback" aria-hidden="true">
       <svg viewBox="0 0 100 50"><use href="#ml-mark"/></svg>
     </div>
-    <button class="hero-replay" type="button" hidden>Replay</button>
+    <div class="hero-logo" aria-hidden="true">
+      <svg viewBox="0 0 100 50">
+        <path class="lg-l" pathLength="1" d="M36.5 15.5 L29 8 Q25 4 21 8 L8 21 Q4 25 8 29 L21 42 Q25 46 29 42 L36.5 34.5" fill="none" stroke="url(#mlg-l)" stroke-width="9.5" stroke-linejoin="round"/>
+        <path class="lg-r" pathLength="1" d="M63.5 34.5 L71 42 Q75 46 79 42 L92 29 Q96 25 92 21 L79 8 Q75 4 71 8 L63.5 15.5" fill="none" stroke="url(#mlg-r)" stroke-width="9.5" stroke-linejoin="round"/>
+        <g class="lg-s" fill="none" stroke="url(#mlg-s)" stroke-width="2.3" stroke-linecap="round"><path d="M38.25 30.35 L43.35 36.05"/><path d="M41.93 27.07 L47.03 32.77"/><path d="M45.61 23.79 L50.71 29.49"/><path d="M49.29 20.51 L54.39 26.21"/><path d="M52.97 17.23 L58.07 22.93"/><path d="M56.65 13.95 L61.75 19.65"/></g>
+      </svg>
+    </div>
+    <div class="hero-film-controls">
+      <button class="hero-sound" type="button" aria-pressed="false">Sound on</button>
+      <button class="hero-replay" type="button" hidden>Replay</button>
+    </div>
     <div class="container hero-inner">
       <h1 class="hero-title" id="hero-title">
         <span class="ln">Strategy. Brand. Growth.</span>
@@ -409,6 +415,6 @@
   </div>
 </footer>
 
-<script type="module" src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

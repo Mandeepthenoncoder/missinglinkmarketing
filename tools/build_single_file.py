@@ -2,7 +2,7 @@
 
 Run from anywhere:  python3 tools/build_single_file.py
 Inlines css/styles.css, js/pitstop.js + js/main.js, the favicon and every image in assets/. Three.js,
-fonts and the showcase film still load from the web (the film from the GitHub Pages copy), so the file
+fonts, the 3D car and crew and the showcase film still load from the web (the film from the GitHub Pages copy), so the file
 needs an internet connection when opened.
 """
 import base64, mimetypes, os, re
@@ -15,6 +15,9 @@ fav = base64.b64encode(open(os.path.join(root, 'assets/favicon.svg'), 'rb').read
 lines = scene.splitlines()
 imports = [l for l in lines if l.startswith('import ')]
 body = '\n'.join(l for l in lines if not l.startswith('import ')).replace('export function createPitScene', 'function createPitScene')
+# the 3D models load from the live site
+body = body.replace("new URL('../assets/3d/', import.meta.url)", "new URL('https://mlinkm.com/assets/3d/')")
+assert 'import.meta.url' not in body
 # the scene keeps its own helpers in its own scope so they never clash with main.js
 scene_block = 'const createPitScene = (() => {\n' + body + '\nreturn createPitScene;\n})();'
 main = main.replace("import { createPitScene } from './pitstop.js';\n", '')

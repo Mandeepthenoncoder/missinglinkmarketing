@@ -16,13 +16,16 @@ const header = $('.site-header');
 const canvas = $('#pit-canvas');
 const replay = $('.hero-replay');
 const stage = (n) => hero.classList.add(`s${n}`);
+// the opening copy runs on its own clock, so it never waits for the 3D models to download
 const beats = {
-  title: () => stage(1),
-  header: () => header.classList.add('is-ready'),
-  lead: () => stage(2),
   lock: () => stage(3),
   end: () => { replay.hidden = false; },
 };
+if (!reducedMotion) {
+  setTimeout(() => stage(1), 300);
+  setTimeout(() => header.classList.add('is-ready'), 700);
+  setTimeout(() => stage(2), 1300);
+}
 let pit = null;
 try {
   pit = createPitScene(canvas, { reducedMotion, onBeat: (name) => beats[name] && beats[name]() });
@@ -37,6 +40,12 @@ if (!pit || reducedMotion) {
 }
 if (pit) {
   if (location.search.includes('debug')) window.pit = pit;
+  pit.ready.catch((err) => { // the models did not load: show the finished state instead
+    console.warn('3D models unavailable', err);
+    canvas.hidden = true;
+    $('.hero-fallback').classList.add('is-on');
+    ['s1', 's2', 's3'].forEach((c) => hero.classList.add(c));
+  });
   replay.addEventListener('click', () => { replay.hidden = true; pit.replay(); });
   hero.addEventListener('pointermove', (e) => {
     pit.state.mouseX = (e.clientX / window.innerWidth - 0.5) * 2;

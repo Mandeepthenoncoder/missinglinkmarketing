@@ -7,11 +7,10 @@ const canHover = window.matchMedia('(hover: hover)').matches;
 
 // =========================================================
 // Hero: the pit stop film plays once, on load, muted (a button turns the sound on).
-// The copy lands on the film's beats:
-//   the problem while the stop runs, "Linked." as the missing wheel locks on,
-//   and the logo draws itself once the camera has risen over the circuit.
+// The copy lands on the film's beats: the problem while the stop goes wrong, "Linked." as the tyre
+// is fitted right, and once the circuit is revealed as the logo, the film settles above the headline.
 // =========================================================
-const BEAT = { lock: 6.9, rise: 10.4 }; // seconds into the 12 s film
+const BEAT = { lock: 7.0, rise: 13.2 }; // seconds into the 15 s film: the light goes green, the logo circuit is complete
 const hero = $('.hero');
 const header = $('.site-header');
 const film = $('#pit-film');
@@ -23,7 +22,7 @@ function finale() {
   hero.classList.add('s1', 's2', 's3', 'is-done');
   header.classList.add('is-ready');
 }
-function showEnd() { // no film: the closing aerial still with the logo, everything in place
+function showEnd() { // no film: the closing still of the logo circuit, everything in place
   film.pause();
   hero.classList.add('is-still');
   sound.hidden = true;
